@@ -1,0 +1,35 @@
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: "GREASE";
+        src: url("assets/fonts/grease__.ttf");
+    }
+    @font-face {
+        font-family: "OAKLASH";
+        src: url("assets/fonts/Oaklash.ttf");
+    }
+    @font-face {
+        font-family: "Branch";
+        src: url("assets/fonts/Branch.ttf");
+
+    }
+    @font-face {
+        font-family: "RosieBrownSerifDemo";
+        src: url("assets/fonts/RosieBrown.otf");
+    }
+    @font-face {
+        font-family: "FLOWRISE";
+        src: url("assets/fonts/FLOWRISE.ttf");
+    }
+}
+
+.noise {
+    background: 
+      linear-gradient(20deg, rebeccapurple, transparent), 
+      url("assets/noise.svg");
+}
