@@ -24,6 +24,15 @@ const router = createBrowserRouter([
 		),
 	},
 	{
+		path: "/MusicA-Portfolio/",
+		element: (
+			<>
+				<Home />
+				<ToTop />
+			</>
+		),
+	},
+	{
 		path: "/skills",
 		element: (
 			<>
