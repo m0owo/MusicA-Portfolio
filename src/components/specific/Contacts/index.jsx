@@ -5,7 +5,7 @@ import { AiOutlineMail } from "react-icons/ai";
 
 const Contacts = () => {
     return (
-        <div className="flex flex-col sm:flex-row sm:justify-start justify-center h-[250px] text-center w-screen bg-white gap-4">
+        <div className="flex flex-col sm:flex-row justify-start h-[250px] text-center w-screen bg-white sm:gap-auto">
             <span><p className="sm:mx-6 font-rosie-brown text-4xl mt-8 sm:text-5xl text-black">Contact Me</p></span>
             <span className="flex flex-row sm:flex-col sm:justify-start sm:mt-10 sm:gap-6 justify-center">
                 <Contact info="Linkedin"

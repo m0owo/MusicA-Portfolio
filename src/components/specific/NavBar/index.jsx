@@ -18,7 +18,7 @@ const NavItem = ({title, link}) => {
     return (
         <span className="group flex flex-row p-2 justify-center">
             <PiStarFourThin className="group-hover:scale-100 fill-white scale-0" />
-            <NavLink className="font-branch font-semibold text-center text-xs px-2
+            <NavLink className="font-branch font-semibold text-center text-lg px-2
                                 group-hover:text-white" to={link}>{title}</NavLink>
             <PiStarFourThin className="group-hover:scale-100 fill-white scale-0" />
         </span>

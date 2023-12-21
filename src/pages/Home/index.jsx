@@ -8,7 +8,7 @@ const Home = () => {
         <div className="h-screen w-screen">
             <div className=" flex flex-col justify-center text-center bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y">
                 <NavBar />
-                <div className="flex flex-col sm:flex-row justify-center m-auto sm:mx-14 ">
+                <div className="flex flex-col sm:flex-row justify-center m-auto sm:mx-14">
                     {/* <WindowFrame /> also change sm:text-cemter below to text-start*/}
                     <div className="mt-20 font-rosie-brown text-5xl sm:text-7xl sm:text-center sm:mx-auto">
                         <div className="flex flex-col text-[#0a063d]">

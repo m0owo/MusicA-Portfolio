@@ -14,7 +14,7 @@ const Projects = () => {
                     Projects
                 </div>
                 <VerticalDivider />
-                <div>
+                <div className="sm:mx-10">
                     <ProjectCard name="Calories Manager" 
                                  technologies="Python(TkInter, Pickle)"
                                  description="This project has the objective of helping beginner users reach their health goals
@@ -53,7 +53,7 @@ const Projects = () => {
 
 const ProjectCard = ({name, technologies, description, date, contributors}) => {
     return (
-        <div className="h-[400px] my-12 mx-2 sm:m-12 bg-gradient-to-b from-amber-100 via-rose-100 to-violet-200 
+        <div className="h-[400px] my-12 mx-6 sm:m-14 bg-gradient-to-b from-amber-100 via-rose-100 to-violet-200 
                         rounded-3xl border-[#0a063d] border-[0.6px] flex flex-col sm:flex-row p-6 sm:p-10
                         overflow-auto"
         >
@@ -63,17 +63,17 @@ const ProjectCard = ({name, technologies, description, date, contributors}) => {
             <div className="flex flex-col m-auto sm:mt-10 text-center sm:text-start break-words">
                 <span className="font-branch text-3xl font-bold sm:text-4xl sm:font-semibold">{name}</span>
                 <span className="flex flex-row justify-center sm:justify-start 
-                                 font-branch font-bold mb-1 sm:mb-2 p-1">
+                                 font-branch font-bold text-lg mb-1 sm:mb-2 p-1">
                     {date}
                 </span>
-                <span className="flex flex-row text-[10px] font-bold sm:justify-start justify-center">
+                <span className="flex flex-row text-[14px] font-bold sm:justify-start justify-center">
                     Technologies: {technologies}
                 </span>
-                <span className="flex flex-row text-[10px] font-bold sm:justify-start justify-center">
+                <span className="flex flex-row text-[14px] font-bold sm:justify-start justify-center">
                     Contributors: {contributors}
                 </span>
                 <hr className="border-gray-600 mx-10 mb-2 mt-1 border-[0.1px] sm:scale-0" />
-                <span className="flex flex-row text-[8px] p-1">
+                <span className="flex flex-row text-[11px] p-1 mx-9 sm:m-0">
                     {description}
                 </span>
             </div>
