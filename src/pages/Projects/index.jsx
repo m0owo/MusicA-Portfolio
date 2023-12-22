@@ -8,7 +8,7 @@ import { PiStarFourFill } from "react-icons/pi";
 const Projects = () => {
     return (
         <div className="h-screen w-screen">
-            <div className="bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y ">
+            <div className="flex flex-col bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y ">
                 <NavBar />
                 <div className="my-10 flex justify-center font-rosie-brown text-4xl sm:text-6xl text-gray-700 transition-all"  data-te-animation-start="onLoad">
                     Projects
