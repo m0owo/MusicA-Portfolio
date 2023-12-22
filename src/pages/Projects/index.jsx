@@ -11,15 +11,17 @@ const Projects = () => {
     }, []);
 
     return (
-        <div className='w-screen'>
+        <div className='w-screen min-w-[512px]'>
             <div div className="bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y">
                 {/* <SideBar /> */}
                 <NavBar />
                 <ToTopButton />
-                <motion.div className="my-16 flex justify-center font-rosie-brown text-5xl sm:text-6xl text-gray-700 transition-all"
-                     initial={{opacity:0, transition: {duration: 0.1}}}
-                     animate={{opacity:1}}
-                     exit={{opacity:0, transition: {duration: 0.1}}}>
+                <motion.div className="my-16 flex justify-center font-rosie-brown text-5xl 
+                                       sm:text-6xl text-[#1d1a4d] transition-all"
+                            initial={{opacity:0, transition: {duration: 0.1}}}
+                            animate={{opacity:1}}
+                            exit={{opacity:0, transition: {duration: 0.1}}}
+                >
                     Projects
                 </motion.div>
                 <VerticalDivider />
@@ -94,6 +96,14 @@ const ProjectCard = ({name, technologies, description, date, contributors, image
         </div>
     );
 };
+
+const Carousel = () => {
+
+}
+
+const Images = () => {
+
+}
 
 
 export default Projects;

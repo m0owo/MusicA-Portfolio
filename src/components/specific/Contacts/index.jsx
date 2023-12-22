@@ -7,8 +7,8 @@ const Contacts = () => {
     return (
         <div className="p-20 sm:p-10 flex flex-col sm:flex-row justify-start h-fit mb-10
                         text-center w-screen bg-white sm:gap-auto">
-            <span><p className="w-full sm:mx-6 font-rosie-brown text-4xl mt-8 
-                                sm:text-5xl text-black text-nowrap">Contact Me</p></span>
+            <span><p className="w-full sm:mx-6 font-rosie-brown text-3xl mt-8 
+                                sm:text-4xl text-black text-nowrap text-center">Contact Me</p></span>
             <span className="flex flex-row sm:flex-col sm:justify-start 
                              sm:mt-10 sm:gap-6 justify-center w-full">
                 <Contact info="Linkedin"

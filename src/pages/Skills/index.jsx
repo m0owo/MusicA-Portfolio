@@ -10,13 +10,13 @@ const Skills = () => {
     }, []);
 
     return (
-        <div className='w-screen'>
+        <div className='w-screen min-w-[512px]'>
             <div className="bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y">
                 {/* <SideBar /> */}
                 <NavBar />
                 <ToTopButton />
                 <motion.div className="my-16 flex justify-center font-rosie-brown 
-                            text-5xl sm:text-6xl text-gray-700 transition-all"
+                            text-5xl sm:text-6xl text-[#1d1a4d] transition-all"
                             initial={{opacity:0, transition: {duration: 0.1}}}
                             animate={{opacity:1}}
                             exit={{opacity:0, transition: {duration: 0.1}}}>
@@ -24,13 +24,13 @@ const Skills = () => {
                 </motion.div>
                 <VerticalDivider />
                 <div className="my-10 text-center font-branch font-bold text-3xl sm:text-4xl">Programming Languages</div>
-                <div className="justify-items-center justify-center m-auto grid grid-cols-2 sm:grid-cols-4 gap-y-5 max-w-4xl">
+                <div className="justify-items-center justify-center m-auto grid grid-cols-2 sm:grid-cols-4 gap-y-5 max-w-6xl">
                     <SkillCard text="Python" pic="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png"/>
                     <SkillCard text="Java" pic="https://cdn.freebiesupply.com/logos/large/2x/java-14-logo-png-transparent.png"/>
                     <SkillCard text="C++" pic="https://upload.wikimedia.org/wikipedia/commons/3/32/C%2B%2B_logo.png" />
                 </div>
                 <div className="my-10 text-center font-branch font-bold text-3xl sm:text-4xl">Frontend Development</div>
-                <div className="justify-items-center justify-center m-auto grid grid-cols-2 sm:grid-cols-4 gap-y-5 max-w-4xl">
+                <div className="justify-items-center justify-center m-auto grid grid-cols-2 sm:grid-cols-4 gap-y-5 max-w-6xl">
                     <SkillCard text="HTML" pic="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-html-5-512.png"/>
                     <SkillCard text="JavaScript" pic="https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png"/>
                     <SkillCard text="CSS" pic="https://diziglobalsolution.com/wp-content/uploads/2023/04/logo-css-3-1536.png"/>
@@ -47,10 +47,12 @@ const Skills = () => {
 
 const SkillCard = ({pic, text}) => {
     return (
-        <div className="flex flex-col justify-center m-auto w-[150px] h-[150px] bg-indigo-100 rounded-xl 
-                        drop-shadow-md border-[0.2px]">
+        <div className="flex flex-col justify-center m-auto 
+                        w-[150px] h-[150px] bg-indigo-100 
+                        rounded-xl sm:w-[210px] sm:h-[210px]
+                        drop-shadow-md border-[0.2px] gap-6">
             <span className="mx-auto my-1"><img src={pic} className="h-10" alt={text} /></span>
-            <span className="mx-auto font-flowrise">{text}</span>
+            <span className="mx-auto font-flowrise font-bold text-lg sm:text-xl">{text}</span>
         </div>
     );
 };

@@ -11,7 +11,7 @@ const Home = () => {
     }, []);
     
     return (
-        <div className="w-screen">
+        <div className="w-screen min-w-[512px]">
             <div className="text-center bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat top-0">
                 {/* <SideBar /> */}
                 <NavBar />
