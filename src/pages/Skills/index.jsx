@@ -4,7 +4,7 @@ import Contacts from "../../components/specific/Contacts"
 
 const Skills = () => {
     return (
-        <div className="h-screen w-screen">
+        <div className="h-fit w-screen">
             <div className="bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y">
                 <NavBar />
                 <div className="my-10  flex justify-center font-rosie-brown text-4xl sm:text-6xl text-gray-700 transition-all">
@@ -27,7 +27,7 @@ const Skills = () => {
                 </div>
                 <VerticalDivider />
                 <hr className="border-black border-[0.3px]"/>
-                <Contacts />
+                {/* <Contacts /> */}
             </div>
         </div>
     )
