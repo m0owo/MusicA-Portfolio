@@ -8,9 +8,9 @@ import { PiStarFourFill } from "react-icons/pi";
 const Projects = () => {
     return (
         <div className="h-screen w-screen">
-            <div className="bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y">
+            <div className="bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y ">
                 <NavBar />
-                <div className="my-10 flex justify-center font-rosie-brown text-4xl sm:text-6xl text-gray-700 transition-all">
+                <div className="my-10 flex justify-center font-rosie-brown text-4xl sm:text-6xl text-gray-700 transition-all"  data-te-animation-start="onLoad">
                     Projects
                 </div>
                 <VerticalDivider />
@@ -22,7 +22,8 @@ const Projects = () => {
                                               into account the user's current BMI and adjusts daily goals based on the recommended average and
                                               the user's goal, whether it is to increase, decrease, or maintain body weight/BMI."
                                  date= "2022"
-                                 contributors="Music Auyeung" />
+                                 contributors="Music Auyeung"
+                                 images={["one", "two", "three"]} />
                     <ProjectCard name="Fuzzy Typers" 
                                  technologies="C++, Raylib"
                                  description="Contributed to a three-person project on the creation of a fun and delightful adaptation of the 
@@ -51,14 +52,17 @@ const Projects = () => {
     )
 }
 
-const ProjectCard = ({name, technologies, description, date, contributors}) => {
+const ProjectCard = ({name, technologies, description, date, contributors, images}) => {
     return (
-        <div className="h-[400px] my-12 mx-6 sm:m-14 bg-gradient-to-b from-amber-100 via-rose-100 to-violet-200 
+        <div className="h-[600px] my-12 mx-6 sm:m-20 bg-gradient-to-b from-[#FDF4D0] via-rose-100 to-violet-200 
                         rounded-3xl border-[#0a063d] border-[0.6px] flex flex-col sm:flex-row p-6 sm:p-10
                         overflow-auto"
         >
             <div className="m-auto min-w-[50%]">
                 <span>Carousel</span>
+                {images && Array.isArray(images) && images.map((item, index) => (
+                    <p key={index}>{item}</p>
+                ))}
             </div>
             <div className="flex flex-col m-auto sm:mt-10 text-center sm:text-start break-words">
                 <span className="font-branch text-3xl font-bold sm:text-4xl sm:font-semibold">{name}</span>
@@ -73,12 +77,13 @@ const ProjectCard = ({name, technologies, description, date, contributors}) => {
                     Contributors: {contributors}
                 </span>
                 <hr className="border-gray-600 mx-10 mb-2 mt-1 border-[0.1px] sm:scale-0" />
-                <span className="flex flex-row text-[11px] p-1 mx-9 sm:m-0">
+                <span className="flex flex-row text-[14px] p-1 mx-9 sm:m-0">
                     {description}
                 </span>
             </div>
         </div>
     );
 };
+
 
 export default Projects
