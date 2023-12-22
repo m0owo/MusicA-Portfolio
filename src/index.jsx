@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Contacts from './components/specific/Contacts';
 import AnimatedRoutes from './components/specific/AnimatedRoutes'
+import SideBar from './components/specific/SideBar';
 
 // const router = createBrowserRouter([
 // 	{
@@ -51,6 +52,7 @@ import AnimatedRoutes from './components/specific/AnimatedRoutes'
 ReactDOM.createRoot(document.getElementById('root')).render(
 	// <RouterProvider router={router}/>
 	<Router>
+		<SideBar />
 		<AnimatedRoutes />
 		<Contacts />
 	</Router>

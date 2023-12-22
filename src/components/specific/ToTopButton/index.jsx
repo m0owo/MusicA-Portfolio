@@ -17,7 +17,7 @@ const ToTopButton = () => {
     });
 
     return (
-        <button className={`fixed bottom-4 right-4 ${scrolled ? 'visible' : 'invisible'}`} 
+        <button className={`text-2xl text-indigo-900 fixed bottom-4 right-4 ${scrolled ? 'visible' : 'invisible'}`} 
                 onClick={ToTop}>
                     <FaArrowAltCircleUp />
         </button>

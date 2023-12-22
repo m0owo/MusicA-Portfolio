@@ -9,13 +9,13 @@ import ToTopButton from '../../components/specific/ToTopButton';
 
 const Home = () => {
     useEffect(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }, []);
     
     return (
         <div className="w-screen">
             <div className="text-center bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y top-0">
-                <SideBar />
+                {/* <SideBar /> */}
                 <NavBar />
                 <ToTopButton />
                 <div className="flex flex-col sm:flex-row justify-center m-auto sm:mx-14" >
@@ -24,7 +24,7 @@ const Home = () => {
                                 initial={{opacity:0, transiton: {duration: 0.1}}}
                                 animate={{opacity:1}}
                                 exit={{opacity:0, transiton: {duration: 0.1}}}>
-                        <div className="flex flex-col text-[#0a063d]">
+                        <div className="flex flex-col text-[#1d1a4d]">
                             <p>Music</p>
                             <p>Auyeung<span className="text-gray-100 text-3xl">'s</span></p>
                             <p className="text-gray-100 text-3xl">Portfolio</p>
