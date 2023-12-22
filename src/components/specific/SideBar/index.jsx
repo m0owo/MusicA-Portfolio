@@ -15,8 +15,8 @@ const SideBar = () => {
 
     function toBottom() {
         window.scrollTo({ top: document.body.scrollHeight, left: 0, behavior: 'smooth' });
-        setExpanded(curr => !curr);
-    };
+
+    }
 
     return (
         <div className={`h-screen border-black bg-transparent backdrop-blur-md sm:scale-0
@@ -24,8 +24,8 @@ const SideBar = () => {
                         ${expanded ? "w-[85%] border-black border-r-[1.2px]"
                         : "border-r-0 w-[10%] backdrop-blur-none" } transition-all ease-in-out`}
         >        
-            <div className={`p-4`}>
-                <button className="flex mr-6 justify-end w-full transition-none"
+            <div className={`justify-center flex p-4 ${expanded ? "" : "h-[50px] w-[90px]"} `}>
+                <button className="flex justify-end h-full w-full transition-none"
                         onClick={() => setExpanded((curr) => !curr)}>
                         {expanded ? <TfiClose className='text-xl' /> : <IoReorderThree className='text-[40px]' />}
                 </button>

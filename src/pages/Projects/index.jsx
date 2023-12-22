@@ -14,12 +14,12 @@ const Projects = () => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }, []);
     return (
-        <div className="w-screen">
-            <div className="bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y ">
+        <div>
+            <div div className="bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y">
                 {/* <SideBar /> */}
                 <NavBar />
                 <ToTopButton />
-                <div className="my-10 flex justify-center font-rosie-brown text-4xl sm:text-6xl text-gray-700 transition-all"
+                <div className="my-16 flex justify-center font-rosie-brown text-5xl sm:text-6xl text-gray-700 transition-all"
                      initial={{opacity:0, transiton: {duration: 0.1}}}
                      animate={{opacity:1}}
                      exit={{opacity:0, transiton: {duration: 0.1}}}>
