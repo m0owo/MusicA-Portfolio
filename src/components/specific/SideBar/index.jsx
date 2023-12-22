@@ -24,10 +24,10 @@ const SideBar = () => {
                         ${expanded ? "w-[85%] border-black border-r-[1.2px]"
                         : "border-r-0 w-[10%] backdrop-blur-none" } transition-all ease-in-out`}
         >        
-            <div className={`justify-center flex p-4 ${expanded ? "" : "h-[50px] w-[90px]"} `}>
+            <div className={`justify-center flex p-4 ${expanded ? "" : "h-[50px] w-[70px]"} `}>
                 <button className="flex justify-end h-full w-full transition-none"
                         onClick={() => setExpanded((curr) => !curr)}>
-                        {expanded ? <TfiClose className='text-xl' /> : <IoReorderThree className='text-[40px]' />}
+                        {expanded ? <TfiClose className='text-xl' /> : <IoReorderThree className='text-[50px]' />}
                 </button>
             </div>
             <div className={`h-full flex flex-col mt-5 ${expanded ? "visible" : "invisible" }`}>

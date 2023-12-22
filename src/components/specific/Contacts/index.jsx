@@ -5,7 +5,7 @@ import { AiOutlineMail } from "react-icons/ai";
 
 const Contacts = () => {
     return (
-        <div className="flex flex-col sm:flex-row justify-start h-fit mb-10
+        <div className="p-20 sm:p-10 flex flex-col sm:flex-row justify-start h-fit mb-10
                         text-center w-screen bg-white sm:gap-auto">
             <span><p className="w-full sm:mx-6 font-rosie-brown text-4xl mt-8 
                                 sm:text-5xl text-black text-nowrap">Contact Me</p></span>
@@ -34,8 +34,7 @@ const Contacts = () => {
 const Contact = ({icon, info, link, literal}) => {
     console.log(link);
     return(
-        
-        <div className="text-xs flex flex-row justify-center">
+        <div className="text-xs flex flex-row justify-center p-2">
             <a href={link} className="hover:cursor-pointer flex flex-row whitespace">
                 <span className="my-auto mx-1">{icon}</span>
                 <span className="whitespace-nowrap text-[10px] w-0 scale-0 sm:scale-100 sm:w-100">{literal}</span>
