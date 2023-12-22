@@ -28,8 +28,8 @@ const AnimatedRoutes = () => {
             <Routes location={location} key={location.pathname}>
                 <Route path='/' element={<><Home/><ToTop/></>} />
                 <Route path='/MusicA-Portfolio' element={<><Home/><ToTop/></>} />
-                <Route path='/skills' element={<><Skills /><ToTop/></>} />
-                <Route path='/projects' element={<><Projects /><ToTop/></>} />
+                <Route path='/MusicA-Portfolio/skills' element={<><Skills /><ToTop/></>} />
+                <Route path='/MusicA-Portfolio/projects' element={<><Projects /><ToTop/></>} />
             </Routes>
         </AnimatePresence>
     )

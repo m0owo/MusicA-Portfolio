@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: [
     "./index.html",
@@ -13,7 +14,12 @@ export default {
         'branch': ["Branch"],
         'flowrise': ["FLOWRISE"],
         'rosie-brown': ["RosieBrownSerifDemo"]
-      }
+      },
+      colors: {
+        amber: {
+          50:"#F2F1DF",
+        }
+      },
     },
   },
   plugins: [],

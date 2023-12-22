@@ -1,16 +1,20 @@
-import NavBar from "../../components/specific/NavBar"
-import VerticalDivider from "../../components/global/VerticalDivider"
-import Contacts from "../../components/specific/Contacts"
+import NavBar from "../../components/specific/NavBar";
+import VerticalDivider from "../../components/global/VerticalDivider";
+import Contacts from "../../components/specific/Contacts";
 import { PiStarFourThin } from "react-icons/pi";
 import { PiStarFourFill } from "react-icons/pi";
+import { motion } from 'framer-motion';
 
 
 const Projects = () => {
     return (
-        <div className="h-fit w-screen">
+        <div className="w-screen">
             <div className="bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y ">
                 <NavBar />
-                <div className="my-10 flex justify-center font-rosie-brown text-4xl sm:text-6xl text-gray-700 transition-all"  data-te-animation-start="onLoad">
+                <div className="my-10 flex justify-center font-rosie-brown text-4xl sm:text-6xl text-gray-700 transition-all"
+                     initial={{opacity:0, transiton: {duration: 0.1}}}
+                     animate={{opacity:1}}
+                     exit={{opacity:0, transiton: {duration: 0.1}}}>
                     Projects
                 </div>
                 <VerticalDivider />
@@ -49,13 +53,13 @@ const Projects = () => {
                 {/* <Contacts /> */}
             </div>
         </div>
-    )
-}
+    );
+};
 
 const ProjectCard = ({name, technologies, description, date, contributors, images}) => {
     return (
-        <div className="h-[600px] my-12 mx-6 sm:m-20 bg-gradient-to-b from-[#FDF4D0] via-rose-100 to-violet-200 
-                        rounded-3xl border-[#0a063d] border-[0.6px] flex flex-col sm:flex-row p-6 sm:p-10
+        <div className="h-[600px] my-12 mx-6 sm:m-20 bg-gradient-to-b from-amber-50 via-rose-100 to-violet-200 
+                        rounded-3xl border-[#b8b7f4] border-solid border-2 flex flex-col sm:flex-row p-6 sm:p-10
                         overflow-auto"
         >
             <div className="m-auto min-w-[50%]">
@@ -64,8 +68,8 @@ const ProjectCard = ({name, technologies, description, date, contributors, image
                     <p key={index}>{item}</p>
                 ))}
             </div>
-            <div className="flex flex-col m-auto sm:mt-10 text-center sm:text-start break-words">
-                <span className="font-branch text-3xl font-bold sm:text-4xl sm:font-semibold">{name}</span>
+            <div className="flex flex-col m-auto justify-center text-center sm:text-start break-words">
+                <span className="font-branch text-3xl font-bold sm:text-5xl sm:font-bold">{name}</span>
                 <span className="flex flex-row justify-center sm:justify-start 
                                  font-branch font-bold text-lg mb-1 sm:mb-2 p-1">
                     {date}
@@ -86,4 +90,4 @@ const ProjectCard = ({name, technologies, description, date, contributors, image
 };
 
 
-export default Projects
+export default Projects;

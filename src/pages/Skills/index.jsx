@@ -1,15 +1,20 @@
-import NavBar from "../../components/specific/NavBar"
-import VerticalDivider from "../../components/global/VerticalDivider"
-import Contacts from "../../components/specific/Contacts"
+import NavBar from "../../components/specific/NavBar";
+import VerticalDivider from "../../components/global/VerticalDivider";
+import Contacts from "../../components/specific/Contacts";
+import { motion } from 'framer-motion'
 
 const Skills = () => {
     return (
-        <div className="h-fit w-screen">
+        <div className="w-screen">
             <div className="bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y">
                 <NavBar />
-                <div className="my-10  flex justify-center font-rosie-brown text-4xl sm:text-6xl text-gray-700 transition-all">
+                <motion.div className="my-10  flex justify-center font-rosie-brown 
+                            text-4xl sm:text-6xl text-gray-700 transition-all"
+                            initial={{opacity:0, transiton: {duration: 0.1}}}
+                            animate={{opacity:1}}
+                            exit={{opacity:0, transiton: {duration: 0.1}}}>
                     Skills
-                </div>
+                </motion.div>
                 <VerticalDivider />
                 <div className="my-10 text-center font-branch font-bold text-3xl sm:text-4xl">Programming Languages</div>
                 <div className="justify-items-center justify-center m-auto grid grid-cols-2 sm:grid-cols-4 gap-y-5 max-w-4xl">
@@ -30,8 +35,8 @@ const Skills = () => {
                 {/* <Contacts /> */}
             </div>
         </div>
-    )
-}
+    );
+};
 
 const SkillCard = ({pic, text}) => {
     return (
@@ -40,7 +45,7 @@ const SkillCard = ({pic, text}) => {
             <span className="mx-auto my-1"><img src={pic} className="h-10" alt={text} /></span>
             <span className="mx-auto font-flowrise">{text}</span>
         </div>
-    )
-}
+    );
+};
 
-export default Skills
+export default Skills;
