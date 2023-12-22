@@ -5,7 +5,7 @@ const NavBar = () => {
     return (
         <div className="z-10 backdrop-blur-sm sticky mx-10 scale-0 sm:scale-100 p-0 top-0 justify-center transition-all">
             <div className="flex flex-row justify-center pb-1">
-                <NavItem title="Home" link="/MusicA-Portfolio" />
+                <NavItem title="Home" link="/MusicA-Portfolio/" />
                 <NavItem title="Skills" link="/MusicA-Portfolio/skills" />
                 <NavItem title="Projects" link="/MusicA-Portfolio/projects" />
                 <span className="group flex flex-row p-2 justify-center">

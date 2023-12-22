@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import NavBar from "../../components/specific/NavBar";
 import VerticalDivider from "../../components/global/VerticalDivider";
 import Contacts from "../../components/specific/Contacts";
@@ -7,10 +8,15 @@ import { motion } from 'framer-motion';
 
 
 const Projects = () => {
+    useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }, []);
     return (
         <div className="w-screen">
             <div className="bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y ">
+                <SideBar />
                 <NavBar />
+                <ToTopButton />
                 <div className="my-10 flex justify-center font-rosie-brown text-4xl sm:text-6xl text-gray-700 transition-all"
                      initial={{opacity:0, transiton: {duration: 0.1}}}
                      animate={{opacity:1}}
@@ -19,6 +25,26 @@ const Projects = () => {
                 </div>
                 <VerticalDivider />
                 <div className="sm:mx-10">
+                    <ProjectCard name="Tea Game" 
+                                 technologies="Raylib"
+                                 description="Participated in a five-person project and lead the development of the Game UI and Art Design
+                                              for a warm and nostalgic game which simulates a tea bar."
+                                 contributors="Music Auyeung, Miki Ajiki, Kawin Thimayom, Peerasawat Yapira, Sorawis Chongterdtoonskul"
+                                 date="2023" />
+                    <ProjectCard name="EduSphere"
+                                 technologies="HTML/CSS, JavaScript, Python(FastApi, ZODB)"
+                                 description="A classroom assistance program which serves to improve the learning environment with features such as
+                                              assignment management, submissions, scoring, grading, and course-specific discussion forums."
+                                 date="2023"
+                                 contributors="Music Auyeung, Miki Ajiki, Sirapop Tuntithanakij"/>
+                    <ProjectCard name="Fuzzy Typers" 
+                                 technologies="C++, Raylib"
+                                 description="Contributed to a three-person project on the creation of a fun and delightful adaptation of the 
+                                              traditional gameplay of typing games. The objective of this game is to help users improve their 
+                                              typing skills. It provides three different modes of gameplay that
+                                              combine productivity and entertainment."
+                                 date="2023"
+                                 contributors="Music Auyeung, Miki Ajiki, Sirapop Tuntithanakij"/>
                     <ProjectCard name="Calories Manager" 
                                  technologies="Python(TkInter, Pickle)"
                                  description="This project has the objective of helping beginner users reach their health goals
@@ -28,25 +54,6 @@ const Projects = () => {
                                  date= "2022"
                                  contributors="Music Auyeung"
                                  images={["one", "two", "three"]} />
-                    <ProjectCard name="Fuzzy Typers" 
-                                 technologies="C++, Raylib"
-                                 description="Contributed to a three-person project on the creation of a fun and delightful adaptation of the 
-                                              traditional gameplay of typing games. The objective of this game is to help users improve their 
-                                              typing skills. It provides three different modes of gameplay that
-                                              combine productivity and entertainment."
-                                 date="2023"
-                                 contributors="Music Auyeung, Miki Ajiki, Sirapop Tuntithanakij"/>
-                    <ProjectCard name="EduSphere"
-                                 technologies="HTML/CSS, JavaScript, Python(FastApi, ZODB)"
-                                 description="A classroom assistance program which serves to improve the learning environment with features such as
-                                              assignment management, submissions, scoring, grading, and course-specific discussion forums."
-                                 date="2023"
-                                 contributors="Music Auyeung, Miki Ajiki, Sirapop Tuntithanakij"/>
-                    <ProjectCard name="Tea Game" 
-                                 technologies="Raylib"
-                                 description="Participated in a five-person project and lead the development of the Game UI and Art Design
-                                              for a warm and nostalgic game which simulates a tea bar."
-                                 contributors="Music Auyeung, Miki Ajiki, Kawin Thimayom, Peerasawat Yapira, Sorawis Chongterdtoonskul"/>
                 </div>
                 <VerticalDivider />
                 <hr className="border-black border-[0.3px]"/>

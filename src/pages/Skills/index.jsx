@@ -1,13 +1,19 @@
+import { useState, useEffect } from 'react';
 import NavBar from "../../components/specific/NavBar";
 import VerticalDivider from "../../components/global/VerticalDivider";
 import Contacts from "../../components/specific/Contacts";
 import { motion } from 'framer-motion'
 
 const Skills = () => {
+    useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }, []);
     return (
         <div className="w-screen">
             <div className="bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y">
+                <SideBar />
                 <NavBar />
+                <ToTopButton />
                 <motion.div className="my-10  flex justify-center font-rosie-brown 
                             text-4xl sm:text-6xl text-gray-700 transition-all"
                             initial={{opacity:0, transiton: {duration: 0.1}}}

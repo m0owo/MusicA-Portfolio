@@ -1,7 +1,6 @@
 import {
 	Route,
     Routes,
-	useLocation,
 } from "react-router-dom";
 import Home from "../../../pages/Home/index.jsx"
 import Skills from "../../../pages/Skills/index.jsx"
@@ -16,20 +15,14 @@ import { AnimatePresence } from 'framer-motion'
 // 	window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth',});
 // };
 
-const ToTop = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-};
-
 const AnimatedRoutes = () => {
-    const location = useLocation();
-
     return (
         <AnimatePresence>
             <Routes location={location} key={location.pathname}>
-                <Route path='/' element={<><Home/><ToTop/></>} />
-                <Route path='/MusicA-Portfolio' element={<><Home/><ToTop/></>} />
-                <Route path='/MusicA-Portfolio/skills' element={<><Skills /><ToTop/></>} />
-                <Route path='/MusicA-Portfolio/projects' element={<><Projects /><ToTop/></>} />
+                <Route path='/' element={<Home/>} />
+                <Route path='/MusicA-Portfolio' element={<Home />} />
+                <Route path='/MusicA-Portfolio/skills' element={<Skills />} />
+                <Route path='/MusicA-Portfolio/projects' element={<Projects />} />
             </Routes>
         </AnimatePresence>
     )
