@@ -124,7 +124,7 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                         />
                         {isVideo(medias[currentMedia]) ? (
                             <Player
-                                className="max-w-[700px] max-h-[400px] m-auto"
+                                className="max-w-[700px] max-h-[400px] m-auto border-[#1d1a4d] border-[1px]"
                                 src={medias[currentMedia]}
                                 autoplay={false}
                                 controls

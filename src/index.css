@@ -1,5 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
-@import '~video-react/styles/scss/video-react';
+@import 'node_modules/video-react/styles/scss/video-react.scss';
 
 @tailwind base;
 @tailwind components;
