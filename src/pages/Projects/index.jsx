@@ -20,8 +20,8 @@ const Projects = () => {
 
     return (
         <div className='w-screen'>
-            {/* <div className="bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y"> */}
-            <div className='bg-gradient-to-r from-indigo-100 via-violet-100 to-fuchsia-100 text-center'>
+            <div className="text-center bg-[url('src/assets/Images/BG.png')] w-screen bg-fixed bg-repeat top-0">
+            {/* <div className='bg-gradient-to-r from-indigo-100 via-violet-100 to-fuchsia-100 text-center'> */}
                 {/* <SideBar /> */}
                 <NavBar />
                 <ToTopButton />

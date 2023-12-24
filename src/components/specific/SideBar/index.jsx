@@ -15,6 +15,7 @@ const SideBar = () => {
 
     function toBottom() {
         window.scrollTo({ top: document.body.scrollHeight, left: 0, behavior: 'smooth' });
+        setExpanded(false);
 
     }
 
@@ -34,8 +35,8 @@ const SideBar = () => {
                 <BsMoonStars className="mx-auto text-lg text-[#1d1a4d]"/>
                 <hr className="my-5 mx-40 border-black" />
                 <SideBarItem title="Home" link="/MusicA-Portfolio/" onClick={linkClicked} />
-                <SideBarItem title="Projects" link="/MusicA-Portfolio/projects" onClick={linkClicked} />
                 <SideBarItem title="Skills" link="/MusicA-Portfolio/skills" onClick={linkClicked} />
+                <SideBarItem title="Projects" link="/MusicA-Portfolio/projects" onClick={linkClicked} />
                 <span className="group hover:bg-[#151753] flex flex-row p-2 justify-center">
                     <PiStarFourThin className="mt-1.5 group-hover:scale-100 fill-white scale-0 text-[#1d1a4d]" />
                     <button className="font-branch font-semibold text-center text-lg px-2 text-[#1d1a4d]
