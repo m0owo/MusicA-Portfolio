@@ -10,9 +10,9 @@ import { PiCaretCircleRightFill } from "react-icons/pi"
 
 const Projects = () => {
     const FT = ["src/assets/Projects/FTgifs/1.gif",
-                "/src/assets/Projects/FTgifs/2.gif",
-                "/src/assets/Projects/FTgifs/3.gif",
-                "/src/assets/Projects/FTgifs/4.gif"]
+                "src/assets/Projects/FTgifs/2.gif",
+                "src/assets/Projects/FTgifs/3.gif",
+                "src/assets/Projects/FTgifs/4.gif"]
     
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -108,7 +108,7 @@ const ProjectCard = ({name, technologies, description, date, contributors, image
                         <motion.img
                             className={`rounded-3xl m-auto max-h-[300px] duration-0 border-gray-400 border-[1px]`}
                             src={Array.isArray(images) && images.length > 0 ? images[currentImage] : ""}
-                            alt="First Image"
+                            alt={currentImage}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 100 }}
                             exit={{ opacity: 0 }}
