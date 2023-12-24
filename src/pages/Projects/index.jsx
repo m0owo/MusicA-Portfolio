@@ -5,14 +5,16 @@ import { motion } from 'framer-motion';
 import ToTopButton from '../../components/specific/ToTopButton';
 import { PiCaretCircleLeftFill } from "react-icons/pi";
 import { PiCaretCircleRightFill } from "react-icons/pi"
-
+import { Player } from 'video-react';
 
 
 const Projects = () => {
-    const FT = ["src/assets/Projects/FTgifs/1.gif",
-                "src/assets/Projects/FTgifs/2.gif",
-                "src/assets/Projects/FTgifs/3.gif",
-                "src/assets/Projects/FTgifs/4.gif"]
+    const FT = ["/src/assets/Projects/FTgifs/1.gif",
+                "/src/assets/Projects/FTgifs/2.gif",
+                "/src/assets/Projects/FTgifs/3.gif",
+                "/src/assets/Projects/FTgifs/4.gif"]
+    const ES = ["/src/assets/Projects/ESgifs/Clip1.mov",
+                "/src/assets/Projects/ESgifs/Clip2.mov"]
     
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -23,6 +25,7 @@ const Projects = () => {
             <div className="text-center bg-[url('/src/assets/Images/BG.png')] w-screen bg-fixed bg-repeat top-0">
             {/* <div className='bg-gradient-to-r from-indigo-100 via-violet-100 to-fuchsia-100 text-center'> */}
                 {/* <SideBar /> */}
+                
                 <NavBar />
                 <ToTopButton />
                 <motion.div className="my-16 flex justify-center font-rosie-brown text-5xl 
@@ -41,14 +44,16 @@ const Projects = () => {
                                               for a warm and nostalgic game which simulates a tea bar."
                                  contributors="Music Auyeung, Miki Ajiki, Kawin Thimayom, Peerasawat Yapira, Sorawis Chongterdtoonskul"
                                  date="2023"
-                                 images={FT} />
+                                 medias={FT}
+                    />
                     <ProjectCard name="EduSphere"
                                  technologies="HTML/CSS, JavaScript, Python(FastApi, ZODB)"
                                  description="A classroom assistance program which serves to improve the learning environment with features such as
                                               assignment management, submissions, scoring, grading, and course-specific discussion forums."
                                  date="2023"
                                  contributors="Music Auyeung, Miki Ajiki, Sirapop Tuntithanakij"
-                                 images={FT}/>
+                                 medias={ES}
+                                 demo={"src/assets/Projects/ESgifs/Clip1.mov"}/>
                     <ProjectCard name="Fuzzy Typers" 
                                  technologies="C++, Raylib"
                                  description="Contributed to a three-person project on the creation of a fun and delightful adaptation of the 
@@ -57,7 +62,7 @@ const Projects = () => {
                                               combine productivity and entertainment."
                                  date="2023"
                                  contributors="Music Auyeung, Miki Ajiki, Sirapop Tuntithanakij"
-                                 images={FT} />
+                                 medias={FT} />
                     <ProjectCard name="Calories Manager" 
                                  technologies="Python(TkInter, Pickle)"
                                  description="This project has the objective of helping beginner users reach their health goals
@@ -66,7 +71,7 @@ const Projects = () => {
                                               the user's goal, whether it is to increase, decrease, or maintain body weight/BMI."
                                  date= "2022"
                                  contributors="Music Auyeung"
-                                 images={FT} />
+                                 medias={FT} />
                 </div>
                 <VerticalDivider />
                 <hr className="border-black border-[0.3px]"/>
@@ -76,12 +81,12 @@ const Projects = () => {
     );
 };
 
-const ProjectCard = ({name, technologies, description, date, contributors, images}) => {
-    console.log(images);
-    const [currentImage, setCurrentImage] = useState(0);
+const ProjectCard = ({name, technologies, description, date, contributors, medias}) => {
+    const [currentMedia, setCurrentMedia] = useState(0);
+    const isVideo = (url) => url.endsWith('.mov');
 
     return (
-        <motion.div className="h-[600px] my-12 mx-6 sm:m-20 bg-gradient-to-b from-amber-50 via-rose-100 to-violet-200 
+        <motion.div className="h-[600px] sm:h-[800px] my-12 mx-6 sm:m-20 bg-gradient-to-b from-amber-50 via-rose-100 to-violet-200 
                         rounded-3xl border-[hsl(241,73%,84%)] border-solid border-2 flex flex-col p-6 sm:p-10 
                         overflow-scroll"
                     initial={{ opacity: 0 }}
@@ -94,45 +99,55 @@ const ProjectCard = ({name, technologies, description, date, contributors, image
                 >
                     {name}
                 </div>
-
                 <div className="group flex flex-col m-auto mt-16 relative z-9 w-full">
                     <motion.div>
-                        <PiCaretCircleLeftFill className='absolute left-0 top-1/2 text-xl
+                        <PiCaretCircleLeftFill className='absolute left-0 top-[40%] text-xl
                                                         cursor-pointer invisible
-                                                        group-hover:visible 
-                                                        hover:text-indigo-800 transition-all'
+                                                        group-hover:visible sm:text-3xl
+                                                        hover:text-indigo-800 transition-all z-10'
                                             onClick={() => {
-                                                    ( currentImage == 0 ) ? setCurrentImage(images.length - 1) : setCurrentImage(currentImage - 1)
+                                                    ( currentMedia == 0 ) ? setCurrentMedia(medias.length - 1) : setCurrentMedia(currentMedia - 1)
                                             }} 
                         />
-                        <motion.img
-                            className={`rounded-3xl m-auto max-h-[300px] duration-0 border-gray-400 border-[1px]`}
-                            src={Array.isArray(images) && images.length > 0 ? images[currentImage] : ""}
-                            alt={currentImage}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 100 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.5 }} // Adjust the duration as needed
-                        />
-                        <PiCaretCircleRightFill className='absolute right-0 top-1/2 text-xl
+                        {isVideo(medias[currentMedia]) ? (
+                            <div className="bg-white rounded-3xl m-auto duration-0 border-gray-400 border-[1px] p-6">
+                                <Player
+                                    className="max-w-[20px] z-2"
+                                    src={medias[currentMedia]}
+                                    autoplay={false}
+                                    controls
+                                />
+                            </div>
+                        ) : (
+                            <motion.img
+                                className="rounded-3xl m-auto max-h-[300px] duration-0 border-gray-400 border-[1px]"
+                                src={Array.isArray(medias) && medias.length > 0 ? medias[currentMedia] : ''}
+                                alt={currentMedia}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 100 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.5 }} // Adjust the duration as needed
+                            />
+                        )}
+                        <PiCaretCircleRightFill className='absolute right-0 top-[40%] text-xl
                                                         cursor-pointer invisible
                                                         group-hover:visible transition-all
-                                                        hover:text-indigo-800'
+                                                        hover:text-indigo-800  sm:text-3xl z-10'
                                                 onClick={() => {
-                                                    ( currentImage == (images.length - 1)) ? setCurrentImage(0) : setCurrentImage(currentImage + 1)
+                                                    ( currentMedia == (medias.length - 1)) ? setCurrentMedia(0) : setCurrentMedia(currentMedia + 1)
                                                 }}
                         />
                     </motion.div>
                     <div className='m-auto my-1'>
                         <div className='m-auto bg-black 
-                                        flex flex-row 
-                                        h-3 w-10 rounded-md'
+                                        flex flex-row gap-2
+                                        h-[8px] p-3 rounded-2xl'
                         >
-                            {images.map((image, index) => (
-                                <div className={`m-auto h-1 w-1 rounded-full ${(index == currentImage) ? "bg-pink-300" : "bg-pink-100"}`}
+                            {medias.map((media, index) => (
+                                <div className={`m-auto h-[6px] w-[6px] rounded-full ${(index == currentMedia) ? "bg-pink-300" : "bg-pink-100"}`}
                                      key={index}
                                      onClick={() => {
-                                        setCurrentImage(index)
+                                        setCurrentMedia(index)
                                      }}
                                 ></div>
                             ))}
