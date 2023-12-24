@@ -7,33 +7,19 @@ import { PiCaretCircleLeftFill } from "react-icons/pi";
 import { PiCaretCircleRightFill } from "react-icons/pi"
 import { Player } from 'video-react';
 
-
-const getRepositoryName = () => {
-    // Get the full path from the URL
-    const fullPath = window.location.href;
-  
-    // Split the path by "/" to get an array of path segments
-    const pathSegments = fullPath.split('/');
-  
-    // Find the segment that represents the repository name
-    const repositoryIndex = pathSegments.indexOf('.github.io');
-  
-    // Return the repository name
-    return pathSegments[repositoryIndex + 1];
-  };
-
-
 const Projects = () => {
-    useEffect(() => {
-        const currentRepository = getRepositoryName();
-        console.log('Current Repository:', currentRepository);
-    }, []);
-    const FT = ["./assets/Projects/FTgifs/1.gif",
-                "./src/assets/Projects/FTgifs/2.gif",
-                "assets/Projects/FTgifs/3.gif",
-                "/assets/Projects/FTgifs/4.gif"]
-    const ES = ["./src/assets/Projects/ESgifs/Clip1.mov",
-                "./src/assets/Projects/ESgifs/Clip2.mov"]
+    const FT = [
+        "/MusicA-Portfolio/assets/Projects/FTgifs/1.gif",
+        "/MusicA-Portfolio/assets/Projects/FTgifs/2.gif",
+        "/MusicA-Portfolio/assets/Projects/FTgifs/3.gif",
+        "/MusicA-Portfolio/assets/Projects/FTgifs/4.gif"
+    ];
+      
+    const ES = [
+        "/MusicA-Portfolio/assets/Projects/ESgifs/Clip1.mov",
+        "/MusicA-Portfolio/assets/Projects/ESgifs/Clip2.mov"
+    ];
+      
     
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -55,7 +41,18 @@ const Projects = () => {
                 >
                     Projects
                 </motion.div>
+
+                <img src="../../assets/Projects/FTgifs/1.gif" alt="1" />
+                <img src="./assets/Projects/FTgifs/2.gif" alt="2" />
+                <img src="/assets/Projects/FTgifs/3.gif" alt="3" />
+                <img src="assets/Projects/FTgifs/3.gif" alt="4" />
+                <img src="src/assets/Projects/FTgifs/3.gif" alt="5" />
+                <img src="/src/assets/Projects/FTgifs/3.gif" alt="6" />
+                <img src="./src/assets/Projects/FTgifs/3.gif" alt="7" />
+                <img src="MusicA-Portfolio/src/assets/Projects/FTgifs/3.gif" alt="8" />
+
                 <VerticalDivider />
+                
                 <div className="sm:mx-10">
                     <ProjectCard name="Super Meow Meow" 
                                  technologies="Raylib"
@@ -199,3 +196,4 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
 
 
 export default Projects;
+
