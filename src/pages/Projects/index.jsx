@@ -8,7 +8,26 @@ import { PiCaretCircleRightFill } from "react-icons/pi"
 import { Player } from 'video-react';
 
 
+const getRepositoryName = () => {
+    // Get the full path from the URL
+    const fullPath = window.location.href;
+  
+    // Split the path by "/" to get an array of path segments
+    const pathSegments = fullPath.split('/');
+  
+    // Find the segment that represents the repository name
+    const repositoryIndex = pathSegments.indexOf('.github.io');
+  
+    // Return the repository name
+    return pathSegments[repositoryIndex + 1];
+  };
+
+  
 const Projects = () => {
+    useEffect(() => {
+        const currentRepository = getRepositoryName();
+        console.log('Current Repository:', currentRepository);
+    }, []);
     const FT = ["./assets/Projects/FTgifs/1.gif",
                 "assets/Projects/FTgifs/2.gif",
                 "/assets/Projects/FTgifs/3.gif",
@@ -92,10 +111,10 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}>
-            <div className="flex flex-row m-auto justify-center text-center break-words w-full
+            <div className="flex flex-col m-auto justify-center text-center break-words w-full
                             backdrop-blur-sm">
-                <div className="m-auto absolute text-center font-branch text-3xl font-bold
-                                 sm:text-5xl sm:font-bold z-10 bg-opacity-100"
+                <div className="m-auto aboslute text-center font-branch text-4xl font-bold
+                                sm:text-5xl sm:font-bold z-10 bg-opacity-100"
                 >
                     {name}
                 </div>
@@ -103,7 +122,7 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                     <motion.div>
                         <PiCaretCircleLeftFill className='absolute left-0 top-[40%] text-xl
                                                         cursor-pointer invisible
-                                                        group-hover:visible sm:text-3xl
+                                                        group-hover:visible sm:text-4xl
                                                         hover:text-indigo-800 transition-all z-10'
                                             onClick={() => {
                                                     ( currentMedia == 0 ) ? setCurrentMedia(medias.length - 1) : setCurrentMedia(currentMedia - 1)
