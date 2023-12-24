@@ -20,7 +20,7 @@ const Home = () => {
                 <NavBar />
                 <ToTopButton />
                 <div className="flex flex-col sm:flex-row justify-center m-auto sm:mx-14" >
-                    {/* <WindowFrame /> also change sm:text-cemter below to text-start*/}
+                    {/* <WindowFrame /> */}
                     <motion.div className="mt-20 font-rosie-brown text-5xl sm:text-7xl sm:text-center sm:mx-auto"
                                 initial={{opacity:0, transition: {duration: 0.1}}}
                                 animate={{opacity:1}}
