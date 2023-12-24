@@ -22,7 +22,7 @@ const getRepositoryName = () => {
     return pathSegments[repositoryIndex + 1];
   };
 
-  
+
 const Projects = () => {
     useEffect(() => {
         const currentRepository = getRepositoryName();
@@ -60,7 +60,7 @@ const Projects = () => {
                     <ProjectCard name="Super Meow Meow" 
                                  technologies="Raylib"
                                  description="Participated in a five-person project and lead the development of the Game UI and Art Design
-                                              for a warm and nostalgic game which simulates a tea bar."
+                                              for a warm and nostalgic game simulates a tea bar inspired from traditional childhood web games."
                                  contributors="Music Auyeung, Miki Ajiki, Kawin Thimayom, Peerasawat Yapira, Sorawis Chongterdtoonskul"
                                  date="2023"
                                  medias={FT}
