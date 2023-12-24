@@ -10,9 +10,8 @@ const Skills = () => {
     }, []);
 
     return (
-        <div className="w-screen bg-[url('/assets/Images/BG.png')] bg-cover">
-            <div className="text-center top-0">
-            {/* <div className='bg-gradient-to-r from-indigo-100 via-violet-100 to-fuchsia-100 text-center'> */}
+        <div className="w-screen">
+            <div className='bg-gradient-to-b from-indigo-200 via-fuchsia-100 to-violet-200 text-center top-0'>
                 {/* <SideBar /> */}
                 <NavBar />
                 <ToTopButton />
@@ -48,13 +47,16 @@ const Skills = () => {
 
 const SkillCard = ({pic, text}) => {
     return (
-        <div className="flex flex-col justify-center m-auto 
+        <motion.div className="flex flex-col justify-center m-auto 
                         w-[150px] h-[150px] bg-indigo-100 
                         rounded-xl sm:w-[210px] sm:h-[210px]
-                        drop-shadow-md border-[0.2px] gap-6">
+                        drop-shadow-md border-[0.2px] gap-6
+                        bg-[url('/assets/Images/BG.png')] bg-cover"
+                        initial={{x: -5, rotate:-20, duration:0.3}}
+                        animate={{x: 0, rotate:0}} >
             <span className="mx-auto my-1"><img src={pic} className="h-10" alt={text} /></span>
             <span className="mx-auto font-flowrise font-bold text-lg sm:text-xl">{text}</span>
-        </div>
+        </motion.div>
     );
 };
 

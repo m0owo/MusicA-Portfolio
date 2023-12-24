@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import NavBar from "../../components/specific/NavBar";
 import VerticalDivider from "../../components/global/VerticalDivider";
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import ToTopButton from '../../components/specific/ToTopButton';
 import { PiCaretCircleLeftFill } from "react-icons/pi";
 import { PiCaretCircleRightFill } from "react-icons/pi"
@@ -17,7 +17,11 @@ const Projects = () => {
       
     const ES = [
         "./assets/Projects/ESgifs/Clip1.mov",
-        "./assets/Projects/ESgifs/Clip2.mov"
+        "./assets/Projects/ESgifs/Clip2.mov",
+        // "./assets/Projects/ESgifs/1.gif",
+        // "./assets/Projects/ESgifs/2.gif",
+        // "./assets/Projects/ESgifs/3.gif",
+        // "./assets/Projects/ESgifs/4.gif",
     ];
       
     
@@ -26,9 +30,8 @@ const Projects = () => {
     }, []);
 
     return (
-        <div className="w-screen bg-[url('/assets/Images/BG.png')] bg-cover">
-            <div className="text-center top-0">
-            {/* <div className='bg-gradient-to-r from-indigo-100 via-violet-100 to-fuchsia-100 text-center'> */}
+        <div className="w-screen">
+            <div className='bg-gradient-to-bl from-pink-100 via-indigo-100 to-violet-100 text-center'>
                 {/* <SideBar /> */}
                 
                 <NavBar />
@@ -96,15 +99,10 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
         const vidExtensions = ['.mov', '.mp4'];
         return vidExtensions.some((extension) => url.endsWith(extension));
       };
-      
-
     return (
         <motion.div className="h-[600px] sm:h-[900px] my-12 mx-6 sm:m-20 bg-gradient-to-b from-amber-50 via-rose-100 to-violet-200 
                         rounded-3xl border-[hsl(241,73%,84%)] border-solid border-2 flex flex-col p-10 
-                        overflow-scroll"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}>
+                        overflow-scroll">
             <div className="flex flex-col m-auto justify-center text-center break-words w-full
                             backdrop-blur-sm">
                 <div className="m-auto aboslute text-center font-branch text-4xl font-bold
@@ -113,44 +111,47 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                     {name}
                 </div>
                 <div className="group flex flex-col m-auto mt-16 relative z-9 w-full">
-                    <motion.div>
+                    <AnimatePresence>
                         <PiCaretCircleLeftFill className='absolute left-0 top-[40%] text-5xl
                                                         cursor-pointer invisible
                                                         group-hover:visible sm:text-6xl
-                                                        hover:text-indigo-800 transition-all z-10'
+                                                        hover:text-indigo-800 z-10'
                                             onClick={() => {
                                                     ( currentMedia == 0 ) ? setCurrentMedia(medias.length - 1) : setCurrentMedia(currentMedia - 1)
                                             }} 
                         />
                         {isVideo(medias[currentMedia]) ? (
-                            <Player
-                                className="max-w-[700px] max-h-[400px] m-auto border-[#1d1a4d] border-[1px]"
-                                src={medias[currentMedia]}
-                                autoplay={false}
-                                controls
-                                fluid={false}
-                                
-                            />
+                            <motion.div>
+                                <Player
+                                    className="sm:max-w-[400px] md:max-w-[480px] max-w-[300px] max-h-[400px] m-auto border-[#1d1a4d] border-[1px]"
+                                    src={medias[currentMedia]}
+                                    key={currentMedia}
+                                    autoplay={false}
+                                    controls
+                                    fluid={false}
+                                    initial={{ opacity:0, transition: {duration:0.5}}}
+                                    animate={{ opacity:1, transition: {duration:0.5} }}
+                                />
+                            </motion.div>
                         ) : (
                             <motion.img
-                                className="rounded-3xl m-auto duration-0 border-gray-400 border-[1px]"
+                                className="rounded-3xl m-auto border-gray-400 border-[1px]"
                                 src={Array.isArray(medias) && medias.length > 0 ? medias[currentMedia] : 'public/assets/Projects/ESgifs/Clip1.mov'}
                                 alt={currentMedia}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 100 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.5 }} // Adjust the duration as needed
+                                key={currentMedia}
+                                initial={{ x:10, opacity: 0, transition: {duration:0.5}}}
+                                animate={{ x:0, opacity: 1,  transition: {duration:0.5}}}
                             />
                         )}
                         <PiCaretCircleRightFill className='absolute right-0 top-[40%] text-5xl
                                                         cursor-pointer invisible
                                                         group-hover:visible sm:text-6xl
-                                                        hover:text-indigo-800 transition-all z-10'
+                                                        hover:text-indigo-800 z-10'
                                                 onClick={() => {
                                                     ( currentMedia == (medias.length - 1)) ? setCurrentMedia(0) : setCurrentMedia(currentMedia + 1)
                                                 }}
                         />
-                    </motion.div>
+                    </AnimatePresence>
                     <div className='m-auto my-1'>
                         <div className='m-auto bg-black 
                                         flex flex-row gap-2
