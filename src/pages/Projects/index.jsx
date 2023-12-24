@@ -9,7 +9,7 @@ import { PiCaretCircleRightFill } from "react-icons/pi"
 
 
 const Projects = () => {
-    const FT = ["/src/assets/Projects/FTgifs/1.gif",
+    const FT = ["src/assets/Projects/FTgifs/1.gif",
                 "/src/assets/Projects/FTgifs/2.gif",
                 "/src/assets/Projects/FTgifs/3.gif",
                 "/src/assets/Projects/FTgifs/4.gif"]
