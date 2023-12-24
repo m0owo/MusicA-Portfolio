@@ -112,7 +112,7 @@ const ProjectCard = ({name, technologies, description, date, contributors, image
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 100 }}
                             exit={{ opacity: 0 }}
-                            transition={{ duration: 500 }} // Adjust the duration as needed
+                            transition={{ duration: 0.5 }} // Adjust the duration as needed
                         />
                         <PiCaretCircleRightFill className='absolute right-0 top-1/2 text-xl
                                                         cursor-pointer invisible
