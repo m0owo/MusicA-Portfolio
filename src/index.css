@@ -7,34 +7,30 @@
 @layer base {
     @font-face {
         font-family: "GREASE";
-        src: url("./assets/Fonts/grease__.ttf");
+        src: url("/assets/Fonts/grease__.ttf");
     }
     @font-face {
         font-family: "OAKLASH";
-        src: url("./assets/Fonts/Oaklash.ttf");
+        src: url("/assets/Fonts/Oaklash.ttf");
     }
     @font-face {
         font-family: "Branch";
-        src: url("./assets/Fonts/Branch.ttf");
+        src: url("/assets/Fonts/Branch.ttf");
     }
     @font-face {
         font-family: "RosieBrownSerifDemo";
-        src: url("./assets/Fonts/RosieBrown.otf");
+        src: url("/assets/Fonts/RosieBrown.otf");
     }
     @font-face {
         font-family: "FLOWRISE";
-        src: url("./assets/Fonts/FLOWRISE.ttf");
+        src: url("/assets/Fonts/FLOWRISE.ttf");
     }
 }
 
-/* .noise {
-    background: url(./assets/Noise/noise.svg);
-} */
-
 .noise {
     background: linear-gradient(to right, #ebf4ff, #c3dafe, #fbdaff), url(https://grainy-gradients.vercel.app/noise.svg);
-  }
-  
-.noise-test {
-    background: linear-gradient(to right, #ebf4ff, #c3dafe, rgba(0, 0, 0, 0)), url(./assets/Noise/noise.svg);
-  }
+}
+
+.pages {
+    background: url('../public/assets/Images/BG.png')
+}

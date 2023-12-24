@@ -27,7 +27,7 @@ const Projects = () => {
 
     return (
         <div className='w-screen'>
-            <div className="text-center bg-[url('/src/assets/Images/BG.png')] w-screen bg-fixed bg-repeat top-0">
+            <div className="text-center bg-[url('/assets/Images/BG.png')] w-screen bg-fixed bg-repeat top-0">
             {/* <div className='bg-gradient-to-r from-indigo-100 via-violet-100 to-fuchsia-100 text-center'> */}
                 {/* <SideBar /> */}
                 
@@ -140,7 +140,7 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                         ) : (
                             <motion.img
                                 className="rounded-3xl m-auto max-h-[300px] duration-0 border-gray-400 border-[1px]"
-                                src={Array.isArray(medias) && medias.length > 0 ? medias[currentMedia] : ''}
+                                src={Array.isArray(medias) && medias.length > 0 ? medias[currentMedia] : '/src/assets/Projects/FTgifs/3.gif'}
                                 alt={currentMedia}
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 100 }}
