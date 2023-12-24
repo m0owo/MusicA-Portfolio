@@ -7,23 +7,23 @@
 @layer base {
     @font-face {
         font-family: "GREASE";
-        src: url("assets/Fonts/grease__.ttf");
+        src: url("Fonts/grease__.ttf");
     }
     @font-face {
         font-family: "OAKLASH";
-        src: url("assets/Fonts/Oaklash.ttf");
+        src: url("Fonts/Oaklash.ttf");
     }
     @font-face {
         font-family: "Branch";
-        src: url("assets/Fonts/Branch.ttf");
+        src: url("Fonts/Branch.ttf");
     }
     @font-face {
         font-family: "RosieBrownSerifDemo";
-        src: url("assets/Fonts/RosieBrown.otf");
+        src: url("Fonts/RosieBrown.otf");
     }
     @font-face {
         font-family: "FLOWRISE";
-        src: url("assets/Fonts/FLOWRISE.ttf");
+        src: url("Fonts/FLOWRISE.ttf");
     }
 }
 
