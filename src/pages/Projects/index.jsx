@@ -28,9 +28,9 @@ const Projects = () => {
         const currentRepository = getRepositoryName();
         console.log('Current Repository:', currentRepository);
     }, []);
-    const FT = ["./assets/Projects/FTgifs/1.gif",
-                "assets/Projects/FTgifs/2.gif",
-                "/assets/Projects/FTgifs/3.gif",
+    const FT = ["src/assets/Projects/FTgifs/1.gif",
+                "src/assets/Projects/FTgifs/2.gif",
+                "src/assets/Projects/FTgifs/3.gif",
                 "src/assets/Projects/FTgifs/4.gif"]
     const ES = ["src/assets/Projects/ESgifs/Clip1.mov",
                 "src/assets/Projects/ESgifs/Clip2.mov"]
