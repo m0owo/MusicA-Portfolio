@@ -9,15 +9,15 @@ import { Player } from 'video-react';
 
 const Projects = () => {
     const FT = [
-        "/MusicA-Portfolio/assets/Projects/FTgifs/1.gif",
-        "/MusicA-Portfolio/assets/Projects/FTgifs/2.gif",
-        "/MusicA-Portfolio/assets/Projects/FTgifs/3.gif",
-        "/MusicA-Portfolio/assets/Projects/FTgifs/4.gif"
+        "assets/Projects/FTgifs/1.gif",
+        "assets/Projects/FTgifs/2.gif",
+        "assets/Projects/FTgifs/3.gif",
+        "assets/Projects/FTgifs/4.gif"
     ];
       
     const ES = [
-        "/MusicA-Portfolio/assets/Projects/ESgifs/Clip1.mov",
-        "/MusicA-Portfolio/assets/Projects/ESgifs/Clip2.mov"
+        "./assets/Projects/ESgifs/Clip1.mov",
+        "./assets/Projects/ESgifs/Clip2.mov"
     ];
       
     
@@ -41,18 +41,8 @@ const Projects = () => {
                 >
                     Projects
                 </motion.div>
-
-                <img src="../../assets/Projects/FTgifs/1.gif" alt="1" />
-                <img src="./assets/Projects/FTgifs/2.gif" alt="2" />
-                <img src="/assets/Projects/FTgifs/3.gif" alt="3" />
-                <img src="assets/Projects/FTgifs/3.gif" alt="4" />
-                <img src="src/assets/Projects/FTgifs/3.gif" alt="5" />
-                <img src="/src/assets/Projects/FTgifs/3.gif" alt="6" />
-                <img src="./src/assets/Projects/FTgifs/3.gif" alt="7" />
-                <img src="src/assets/Projects/FTgifs/3.gif" alt="20" />
-                <img src="./MusicA-Portfolio/src/assets/Projects/FTgifs/3.gif" alt="8" />
-                <img src="/MusicA-Portfolio/src/assets/Projects/FTgifs/3.gif" alt="9" />
-                <img src="MusicA-Portfolio/src/assets/Projects/FTgifs/3.gif" alt="10" />
+                {/* <img src="./assets/Projects/FTgifs/2.gif" alt="2" />
+                <img src="assets/Projects/FTgifs/3.gif" alt="4" /> */}
 
                 <VerticalDivider />
                 
@@ -129,18 +119,23 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                                             }} 
                         />
                         {isVideo(medias[currentMedia]) ? (
-                            <div className="bg-white rounded-3xl m-auto duration-0 border-gray-400 border-[1px] p-6">
-                                <Player
-                                    className="max-w-[20px] z-2"
-                                    src={medias[currentMedia]}
-                                    autoplay={false}
-                                    controls
-                                />
-                            </div>
+                            <Player
+                                className=""
+                                src={medias[currentMedia]}
+                                autoplay={false}
+                            />
+                            // <div className="bg-white rounded-3xl m-auto duration-0 border-gray-400 border-[1px] p-6">
+                            //     <Player
+                            //         className=" z-2"
+                            //         src={medias[currentMedia]}
+                            //         autoplay={false}
+                            //         controls
+                            //     />
+                            // </div>
                         ) : (
                             <motion.img
-                                className="rounded-3xl m-auto max-h-[300px] duration-0 border-gray-400 border-[1px]"
-                                src={Array.isArray(medias) && medias.length > 0 ? medias[currentMedia] : '/src/assets/Projects/FTgifs/3.gif'}
+                                className="rounded-3xl m-auto duration-0 border-gray-400 border-[1px]"
+                                src={Array.isArray(medias) && medias.length > 0 ? medias[currentMedia] : 'public/assets/Projects/ESgifs/Clip1.mov'}
                                 alt={currentMedia}
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 100 }}
