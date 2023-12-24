@@ -9,10 +9,10 @@ import { PiCaretCircleRightFill } from "react-icons/pi"
 
 
 const Projects = () => {
-    const FT = ["../../assets/Projects/FTgifs/1.gif",
-                "src/assets/Projects/FTgifs/2.gif",
-                "src/assets/Projects/FTgifs/3.gif",
-                "src/assets/Projects/FTgifs/4.gif"]
+    const FT = ["/src/assets/Projects/FTgifs/1.gif",
+                "/src/assets/Projects/FTgifs/2.gif",
+                "/src/assets/Projects/FTgifs/3.gif",
+                "/src/assets/Projects/FTgifs/4.gif"]
     
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -20,7 +20,7 @@ const Projects = () => {
 
     return (
         <div className='w-screen'>
-            <div className="text-center bg-[url('../../assets/Images/BG.png')] w-screen bg-fixed bg-repeat top-0">
+            <div className="text-center bg-[url('/src/assets/Images/BG.png')] w-screen bg-fixed bg-repeat top-0">
             {/* <div className='bg-gradient-to-r from-indigo-100 via-violet-100 to-fuchsia-100 text-center'> */}
                 {/* <SideBar /> */}
                 <NavBar />
