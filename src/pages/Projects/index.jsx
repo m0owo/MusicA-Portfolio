@@ -49,7 +49,9 @@ const Projects = () => {
                 <img src="src/assets/Projects/FTgifs/3.gif" alt="5" />
                 <img src="/src/assets/Projects/FTgifs/3.gif" alt="6" />
                 <img src="./src/assets/Projects/FTgifs/3.gif" alt="7" />
-                <img src="MusicA-Portfolio/src/assets/Projects/FTgifs/3.gif" alt="8" />
+                <img src="./MusicA-Portfolio/src/assets/Projects/FTgifs/3.gif" alt="8" />
+                <img src="/MusicA-Portfolio/src/assets/Projects/FTgifs/3.gif" alt="9" />
+                <img src="MusicA-Portfolio/src/assets/Projects/FTgifs/3.gif" alt="10" />
 
                 <VerticalDivider />
                 
