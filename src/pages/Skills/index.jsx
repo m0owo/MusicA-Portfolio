@@ -11,7 +11,8 @@ const Skills = () => {
 
     return (
         <div className='w-screen min-w-[512px]'>
-            <div className="bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y">
+            {/* <div className="bg-[url('./assets/BG.png')] bg-cover bg-fixed bg-repeat-y"> */}
+            <div className='bg-gradient-to-r from-indigo-100 via-violet-100 to-fuchsia-100 text-center'>
                 {/* <SideBar /> */}
                 <NavBar />
                 <ToTopButton />

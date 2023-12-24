@@ -15,7 +15,7 @@ const WindowFrame = () => {
                         border-black transparent"
                 >
                     <div className="w-[201px] h-[300px] ml-1
-                            rounded-t-[50%] bg-[url('./././assets/PIC1.JPG')]
+                            rounded-t-[50%] bg-[url('assets/Images/PIC1.JPG')]
                             mt-0.5 transition-all border-[1px]
                             border-gray-700 bg-contain bg-left-bottom z-10"
                     >

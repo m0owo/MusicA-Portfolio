@@ -31,16 +31,16 @@ const SideBar = () => {
                 </button>
             </div>
             <div className={`h-full flex flex-col mt-5 ${expanded ? "visible" : "invisible" }`}>
-                <BsMoonStars className="mx-auto text-lg"/>
+                <BsMoonStars className="mx-auto text-lg text-[#1d1a4d]"/>
                 <hr className="my-5 mx-40 border-black" />
                 <SideBarItem title="Home" link="/MusicA-Portfolio/" onClick={linkClicked} />
                 <SideBarItem title="Projects" link="/MusicA-Portfolio/projects" onClick={linkClicked} />
                 <SideBarItem title="Skills" link="/MusicA-Portfolio/skills" onClick={linkClicked} />
                 <span className="group hover:bg-[#151753] flex flex-row p-2 justify-center">
-                    <PiStarFourThin className="mt-1.5 group-hover:scale-100 fill-white scale-0" />
-                    <button className="font-branch font-semibold text-center text-lg px-2
+                    <PiStarFourThin className="mt-1.5 group-hover:scale-100 fill-white scale-0 text-[#1d1a4d]" />
+                    <button className="font-branch font-semibold text-center text-lg px-2 text-[#1d1a4d]
                                      group-hover:text-[#EAE4B9]" onClick={toBottom}>Contact</button>
-                    <PiStarFourThin className="mt-1.5 group-hover:scale-100 fill-white scale-0" />
+                    <PiStarFourThin className="mt-1.5 group-hover:scale-100 fill-white scale-0 text-[#1d1a4d]" />
                 </span>
             </div> 
         </div>
@@ -55,7 +55,7 @@ const SideBarItem = ({title, link, onClick}) => {
     return (
         <span className={`group hover:bg-[#151753] flex flex-row p-2 justify-center`}>
             <PiStarFourThin className="mt-1.5 group-hover:scale-100 fill-[#FFFDF0] scale-0" />
-            <NavLink className="font-branch font-semibold text-center text-lg px-2
+            <NavLink className="font-branch font-semibold text-center text-lg px-2 text-[#1d1a4d]
                                 group-hover:text-[#EAE4B9]" to={link} onClick={onClick}>{title}</NavLink>
             <PiStarFourThin className="mt-1.5 group-hover:scale-100 fill-[#FFFDF0] scale-0" />
         </span>
