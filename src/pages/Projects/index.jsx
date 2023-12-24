@@ -10,11 +10,11 @@ import { Player } from 'video-react';
 
 const Projects = () => {
     const FT = ["./assets/Projects/FTgifs/1.gif",
-                "./assets/Projects/FTgifs/2.gif",
-                "./assets/Projects/FTgifs/3.gif",
-                "./assets/Projects/FTgifs/4.gif"]
-    const ES = ["./assets/Projects/ESgifs/Clip1.mov",
-                "./assets/Projects/ESgifs/Clip2.mov"]
+                "assets/Projects/FTgifs/2.gif",
+                "/assets/Projects/FTgifs/3.gif",
+                "src/assets/Projects/FTgifs/4.gif"]
+    const ES = ["src/assets/Projects/ESgifs/Clip1.mov",
+                "src/assets/Projects/ESgifs/Clip2.mov"]
     
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -38,7 +38,7 @@ const Projects = () => {
                 </motion.div>
                 <VerticalDivider />
                 <div className="sm:mx-10">
-                    <ProjectCard name="Tea Game" 
+                    <ProjectCard name="Super Meow Meow" 
                                  technologies="Raylib"
                                  description="Participated in a five-person project and lead the development of the Game UI and Art Design
                                               for a warm and nostalgic game which simulates a tea bar."
