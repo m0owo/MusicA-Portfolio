@@ -11,8 +11,8 @@ const Home = () => {
     }, []);
     
     return (
-        <div className="w-screen">
-            <div className="text-center bg-[url('/assets/Images/BG.png')] w-screen bg-fixed bg-repeat top-0">
+        <div className="w-screen bg-[url('/assets/Images/BG.png')] bg-cover">
+            <div className="text-center w-full bg-fixed top-0">
             {/* i changed the folder to the bg */}
             {/* <div className='bg-gradient-to-r from-indigo-100 via-violet-100 to-fuchsia-100
                             text-center'> */}

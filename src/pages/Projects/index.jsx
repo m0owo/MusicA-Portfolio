@@ -26,8 +26,8 @@ const Projects = () => {
     }, []);
 
     return (
-        <div className='w-screen'>
-            <div className="text-center bg-[url('/assets/Images/BG.png')] w-screen bg-fixed bg-repeat top-0">
+        <div className="w-screen bg-[url('/assets/Images/BG.png')] bg-cover">
+            <div className="text-center top-0">
             {/* <div className='bg-gradient-to-r from-indigo-100 via-violet-100 to-fuchsia-100 text-center'> */}
                 {/* <SideBar /> */}
                 
@@ -47,14 +47,14 @@ const Projects = () => {
                 <VerticalDivider />
                 
                 <div className="sm:mx-10">
-                    <ProjectCard name="Super Meow Meow" 
+                    {/* <ProjectCard name="Super Meow Meow" 
                                  technologies="Raylib"
                                  description="Participated in a five-person project and lead the development of the Game UI and Art Design
                                               for a warm and nostalgic game simulates a tea bar inspired from traditional childhood web games."
                                  contributors="Music Auyeung, Miki Ajiki, Kawin Thimayom, Peerasawat Yapira, Sorawis Chongterdtoonskul"
                                  date="2023"
                                  medias={FT}
-                    />
+                    /> */}
                     <ProjectCard name="EduSphere"
                                  technologies="HTML/CSS, JavaScript, Python(FastApi, ZODB)"
                                  description="A classroom assistance program which serves to improve the learning environment with features such as
@@ -72,7 +72,7 @@ const Projects = () => {
                                  date="2023"
                                  contributors="Music Auyeung, Miki Ajiki, Sirapop Tuntithanakij"
                                  medias={FT} />
-                    <ProjectCard name="Calories Manager" 
+                    {/* <ProjectCard name="Calories Manager" 
                                  technologies="Python(TkInter, Pickle)"
                                  description="This project has the objective of helping beginner users reach their health goals
                                               through the more friendly alternative to exercise, the art of eating. It takes
@@ -80,7 +80,7 @@ const Projects = () => {
                                               the user's goal, whether it is to increase, decrease, or maintain body weight/BMI."
                                  date= "2022"
                                  contributors="Music Auyeung"
-                                 medias={FT} />
+                                 medias={FT} /> */}
                 </div>
                 <VerticalDivider />
                 <hr className="border-black border-[0.3px]"/>
@@ -92,11 +92,15 @@ const Projects = () => {
 
 const ProjectCard = ({name, technologies, description, date, contributors, medias}) => {
     const [currentMedia, setCurrentMedia] = useState(0);
-    const isVideo = (url) => url.endsWith('.mov');
+    const isVideo = (url) => {
+        const vidExtensions = ['.mov', '.mp4'];
+        return vidExtensions.some((extension) => url.endsWith(extension));
+      };
+      
 
     return (
-        <motion.div className="h-[600px] sm:h-[800px] my-12 mx-6 sm:m-20 bg-gradient-to-b from-amber-50 via-rose-100 to-violet-200 
-                        rounded-3xl border-[hsl(241,73%,84%)] border-solid border-2 flex flex-col p-6 sm:p-10 
+        <motion.div className="h-[600px] sm:h-[900px] my-12 mx-6 sm:m-20 bg-gradient-to-b from-amber-50 via-rose-100 to-violet-200 
+                        rounded-3xl border-[hsl(241,73%,84%)] border-solid border-2 flex flex-col p-10 
                         overflow-scroll"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -110,9 +114,9 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                 </div>
                 <div className="group flex flex-col m-auto mt-16 relative z-9 w-full">
                     <motion.div>
-                        <PiCaretCircleLeftFill className='absolute left-0 top-[40%] text-xl
+                        <PiCaretCircleLeftFill className='absolute left-0 top-[40%] text-5xl
                                                         cursor-pointer invisible
-                                                        group-hover:visible sm:text-4xl
+                                                        group-hover:visible sm:text-6xl
                                                         hover:text-indigo-800 transition-all z-10'
                                             onClick={() => {
                                                     ( currentMedia == 0 ) ? setCurrentMedia(medias.length - 1) : setCurrentMedia(currentMedia - 1)
@@ -120,18 +124,13 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                         />
                         {isVideo(medias[currentMedia]) ? (
                             <Player
-                                className=""
+                                className="max-w-[700px] max-h-[400px] m-auto"
                                 src={medias[currentMedia]}
                                 autoplay={false}
+                                controls
+                                fluid={false}
+                                
                             />
-                            // <div className="bg-white rounded-3xl m-auto duration-0 border-gray-400 border-[1px] p-6">
-                            //     <Player
-                            //         className=" z-2"
-                            //         src={medias[currentMedia]}
-                            //         autoplay={false}
-                            //         controls
-                            //     />
-                            // </div>
                         ) : (
                             <motion.img
                                 className="rounded-3xl m-auto duration-0 border-gray-400 border-[1px]"
@@ -143,10 +142,10 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                                 transition={{ duration: 0.5 }} // Adjust the duration as needed
                             />
                         )}
-                        <PiCaretCircleRightFill className='absolute right-0 top-[40%] text-xl
+                        <PiCaretCircleRightFill className='absolute right-0 top-[40%] text-5xl
                                                         cursor-pointer invisible
-                                                        group-hover:visible transition-all
-                                                        hover:text-indigo-800  sm:text-3xl z-10'
+                                                        group-hover:visible sm:text-6xl
+                                                        hover:text-indigo-800 transition-all z-10'
                                                 onClick={() => {
                                                     ( currentMedia == (medias.length - 1)) ? setCurrentMedia(0) : setCurrentMedia(currentMedia + 1)
                                                 }}
