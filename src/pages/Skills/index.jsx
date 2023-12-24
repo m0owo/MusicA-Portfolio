@@ -11,7 +11,7 @@ const Skills = () => {
 
     return (
         <div className="w-screen">
-            <div className='bg-gradient-to-b from-indigo-200 via-fuchsia-100 to-violet-200 text-center top-0'>
+            <div className='bg-gradient-to-br from-indigo-200 via-fuchsia-100 to-violet-200 text-center top-0'>
                 {/* <SideBar /> */}
                 <NavBar />
                 <ToTopButton />
@@ -50,7 +50,7 @@ const SkillCard = ({pic, text}) => {
         <motion.div className="flex flex-col justify-center m-auto 
                         w-[150px] h-[150px] bg-indigo-100 
                         rounded-xl sm:w-[210px] sm:h-[210px]
-                        drop-shadow-md border-[0.2px] gap-6
+                        drop-shadow-lg border-[0.1px] border-[#9e9bd1] gap-6
                         bg-[url('/assets/Images/BG.png')] bg-cover"
                         initial={{x: -5, rotate:-20, duration:0.3}}
                         animate={{x: 0, rotate:0}} >

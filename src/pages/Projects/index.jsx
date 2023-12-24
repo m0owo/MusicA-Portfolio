@@ -102,7 +102,9 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
     return (
         <motion.div className="h-[600px] sm:h-[900px] my-12 mx-6 sm:m-20 bg-gradient-to-b from-amber-50 via-rose-100 to-violet-200 
                         rounded-3xl border-[hsl(241,73%,84%)] border-solid border-2 flex flex-col p-10 
-                        overflow-scroll">
+                        overflow-scroll"
+                        initial={{ x:-100, transition: {duration:0.5}}}
+                        animate={{ x:0, transition: {duration:0.5} }}>
             <div className="flex flex-col m-auto justify-center text-center break-words w-full
                             backdrop-blur-sm">
                 <div className="m-auto aboslute text-center font-branch text-4xl font-bold
