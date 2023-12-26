@@ -26,8 +26,8 @@ const Home = () => {
                                 exit={{opacity:0, transition: {duration: 0.1}}}>
                         <div className="flex flex-col text-[#1d1a4d]">
                             <p>Music</p>
-                            <p>Auyeung<span className="text-gray-100 text-3xl">'s</span></p>
-                            <p className="text-gray-100 text-3xl">Portfolio</p>
+                            <p>Auyeung<span className="text-white text-3xl">'s</span></p>
+                            <p className="text-white text-3xl">Portfolio</p>
                         </div>
                     </motion.div>
                 </div>

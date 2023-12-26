@@ -14,10 +14,14 @@ const Projects = () => {
         "assets/Projects/FTgifs/3.webp",
         "assets/Projects/FTgifs/4.webp"
     ];
+
+    const CM = [
+        "assets/Projects/CMgifs/Clip1.MOV"
+    ]
       
     const ES = [
-        "./assets/Projects/ESgifs/Clip1.mov",
-        "./assets/Projects/ESgifs/Clip2.mov",
+        "assets/Projects/ESgifs/Clip1.mp4",
+        "assets/Projects/ESgifs/Clip2.mp4",
         // "./assets/Projects/ESgifs/1.gif",
         // "./assets/Projects/ESgifs/2.gif",
         // "./assets/Projects/ESgifs/3.gif",
@@ -52,30 +56,31 @@ const Projects = () => {
                 <div className="sm:mx-10">
                     {/* <ProjectCard name="Super Meow Meow" 
                                  technologies="Raylib"
-                                 description="Participated in a five-person project and lead the development of the Game UI and Art Design
-                                              for a warm and nostalgic game simulates a tea bar inspired from traditional childhood web games."
+                                 description="Participated in a five-person project, Super Meow Meow, by leading the development of the Game UI and Art Design
+                                              for a warm and nostalgic game which simulates a tea bar inspired from familiar childhood web games."
                                  contributors="Music Auyeung, Miki Ajiki, Kawin Thimayom, Peerasawat Yapira, Sorawis Chongterdtoonskul"
                                  date="2023"
                                  medias={FT}
                     /> */}
                     <ProjectCard name="EduSphere"
                                  technologies="HTML/CSS, JavaScript, Python(FastApi, ZODB)"
-                                 description="A classroom assistance program which serves to improve the learning environment with features such as
-                                              assignment management, submissions, scoring, grading, and course-specific discussion forums."
+                                 description="Edusphere is a classroom assistance program which serves to improve the learning environment with features such as
+                                              assignment management, submissions, scoring, grading, and course-specific discussion forums. The UI is created using HTML/CSS 
+                                              and JavaScript whereas the Database and requests are managed using Python's ZODB and FastApi, respectively."
                                  date="2023"
                                  contributors="Music Auyeung, Miki Ajiki, Sirapop Tuntithanakij"
                                  medias={ES}
                                  demo={"src/assets/Projects/ESgifs/Clip1.mov"}/>
                     <ProjectCard name="Fuzzy Typers" 
                                  technologies="C++, Raylib"
-                                 description="Contributed to a three-person project on the creation of a fun and delightful adaptation of the 
-                                              traditional gameplay of typing games. The objective of this game is to help users improve their 
-                                              typing skills. It provides three different modes of gameplay that
-                                              combine productivity and entertainment."
+                                 description="Fuzzy Typers is the fruit of the efforts of a three-person team on a fun and delightful 
+                                              adaptation based on the traditional gameplay of typing games. The objective of this game is to 
+                                              help users improve their typing speed and accuracy by encouraging practice. It provides three different 
+                                              modes of gameplay in order to combine productivity and entertainment."
                                  date="2023"
                                  contributors="Music Auyeung, Miki Ajiki, Sirapop Tuntithanakij"
                                  medias={FT} />
-                    {/* <ProjectCard name="Calories Manager" 
+                    <ProjectCard name="Calories Manager" 
                                  technologies="Python(TkInter, Pickle)"
                                  description="This project has the objective of helping beginner users reach their health goals
                                               through the more friendly alternative to exercise, the art of eating. It takes
@@ -83,7 +88,7 @@ const Projects = () => {
                                               the user's goal, whether it is to increase, decrease, or maintain body weight/BMI."
                                  date= "2022"
                                  contributors="Music Auyeung"
-                                 medias={FT} /> */}
+                                 medias={CM} />
                 </div>
                 <VerticalDivider />
                 <hr className="border-black border-[0.3px]"/>
@@ -96,7 +101,7 @@ const Projects = () => {
 const ProjectCard = ({name, technologies, description, date, contributors, medias}) => {
     const [currentMedia, setCurrentMedia] = useState(0);
     const isVideo = (url) => {
-        const vidExtensions = ['.mov', '.mp4'];
+        const vidExtensions = ['.MOV', '.mp4'];
         return vidExtensions.some((extension) => url.endsWith(extension));
       };
     return (
@@ -123,24 +128,28 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                                             }} 
                         />
                         {isVideo(medias[currentMedia]) ? (
-                            <motion.div>
+                            <motion.div
+                                initial={{ opacity:0, transition: {duration:0.5}}}
+                                animate={{ opacity:1, transition: {duration:0.5} }}
+                            >
                                 <Player
-                                    className="sm:max-w-[400px] md:max-w-[480px] max-w-[300px] max-h-[400px] m-auto border-[#1d1a4d] border-[1px]"
+                                    className="sm:max-w-[400px] md:max-w-[480px] max-w-[250px] max-h-[250px] sm:max-h-[400px] m-auto border-[#1d1a4d] border-[1px]"
                                     src={medias[currentMedia]}
-                                    key={currentMedia}
+                                    key={name + currentMedia}
                                     autoplay={false}
                                     controls
                                     fluid={false}
-                                    initial={{ opacity:0, transition: {duration:0.5}}}
-                                    animate={{ opacity:1, transition: {duration:0.5} }}
                                 />
+                                {/* <video className="sm:max-w-[400px] md:max-w-[480px] max-w-[300px] max-h-[400px] m-auto border-[#1d1a4d] border-[1px]"
+                                       src={medias[currentMedia]}
+                                       key={currentMedia}></video> */}
                             </motion.div>
                         ) : (
                             <motion.img
                                 className="rounded-3xl m-auto border-gray-400 border-[1px]"
                                 src={Array.isArray(medias) && medias.length > 0 ? medias[currentMedia] : 'public/assets/Projects/ESgifs/Clip1.mov'}
                                 alt={currentMedia}
-                                key={currentMedia}
+                                key={name + currentMedia}
                                 initial={{ x:10, opacity: 0, transition: {duration:0.5}}}
                                 animate={{ x:0, opacity: 1,  transition: {duration:0.5}}}
                             />
