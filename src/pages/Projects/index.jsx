@@ -9,10 +9,10 @@ import { Player } from 'video-react';
 
 const Projects = () => {
     const FT = [
-        "assets/Projects/FTgifs/1.gif",
-        "assets/Projects/FTgifs/2.gif",
-        "assets/Projects/FTgifs/3.gif",
-        "assets/Projects/FTgifs/4.gif"
+        "assets/Projects/FTgifs/1.webp",
+        "assets/Projects/FTgifs/2.webp",
+        "assets/Projects/FTgifs/3.webp",
+        "assets/Projects/FTgifs/4.webp"
     ];
       
     const ES = [
