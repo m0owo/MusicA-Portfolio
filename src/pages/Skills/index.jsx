@@ -15,7 +15,7 @@ const Skills = () => {
                 {/* <SideBar /> */}
                 <NavBar />
                 <ToTopButton />
-                <motion.div className="my-16 flex justify-center font-rosie-brown 
+                <motion.div className="my-20 flex justify-center font-rosie-brown 
                             text-5xl sm:text-6xl text-[#1d1a4d] transition-all"
                             initial={{opacity:0, transition: {duration: 0.1}}}
                             animate={{opacity:1}}
@@ -51,7 +51,7 @@ const SkillCard = ({pic, text}) => {
                         w-[150px] h-[150px] bg-indigo-100 
                         rounded-xl sm:w-[210px] sm:h-[210px]
                         drop-shadow-lg border-[0.1px] border-[#9e9bd1] gap-6
-                        bg-[url('/assets/Images/BG.webp')] bg-cover"
+                        bg-[url('/assets/Images/BG.webp')] bg-cover "
                         initial={{x: -5, rotate:-20, duration:0.3}}
                         animate={{x: 0, rotate:0}} >
             <span className="mx-auto my-1"><img src={pic} className="h-10" alt={text} /></span>

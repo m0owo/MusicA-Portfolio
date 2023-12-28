@@ -54,7 +54,8 @@ const toBottom = () => {
 
 const SideBarItem = ({title, link, onClick}) => {
     return (
-        <span className={`group hover:bg-[#151753] flex flex-row p-2 justify-center`}>
+        <span className={`group hover:bg-[#151753] flex flex-row p-2 
+                          justify-center transition-all`}>
             <PiStarFourThin className="mt-1.5 group-hover:scale-100 fill-[#FFFDF0] scale-0" />
             <NavLink className="font-branch font-semibold text-center text-lg px-2 text-[#1d1a4d]
                                 group-hover:text-[#EAE4B9]" to={link} onClick={onClick}>{title}</NavLink>
