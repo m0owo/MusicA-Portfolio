@@ -41,7 +41,7 @@ const Contact = ({icon, info, link, literal}) => {
     return(
         <div className="text-xs flex flex-row justify-center sm:justify-end sm:mr-60 p-2
                         scale-75 sm:scale-95 hover:scale-100 hover:font-bold transition-all">
-            <a href={link} className="hover:cursor-pointer flex flex-row whitespace">
+            <a href={link} target="_blank" className="hover:cursor-pointer flex flex-row whitespace">
                 <div className="my-auto mx-1 sm:mx-2 sm:text-lg">{icon}</div>
                 <div className="whitespace-nowrap text-[10px] sm:text-sm w-0 scale-0 sm:scale-100 sm:w-100">{literal}</div>
                 <div className="m-auto text-[10px] sm:scale-0 sm:w-0">{info}</div>
