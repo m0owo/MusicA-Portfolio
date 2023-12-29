@@ -5,7 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ToTopButton from '../../components/specific/ToTopButton';
 import { PiCaretCircleLeftFill } from "react-icons/pi";
 import { PiCaretCircleRightFill } from "react-icons/pi"
+import { SlSocialGithub } from "react-icons/sl";
 import { Player } from 'video-react';
+
 
 const Projects = () => {
     const FT = [
@@ -70,7 +72,9 @@ const Projects = () => {
                                  date="2023"
                                  contributors="Music Auyeung, Miki Ajiki, Sirapop Tuntithanakij"
                                  medias={ES}
-                                 demo={"src/assets/Projects/ESgifs/Clip1.mov"}/>
+                                 demo={"src/assets/Projects/ESgifs/Clip1.mov"}
+                                 github="https://github.com/m0owo/SEdu"
+                    />
                     <ProjectCard name="Fuzzy Typers" 
                                  technologies="C++, Raylib"
                                  description="Fuzzy Typers is the fruit of the efforts of a three-person team on a fun and delightful 
@@ -79,7 +83,9 @@ const Projects = () => {
                                               modes of gameplay in order to combine productivity and entertainment."
                                  date="2023"
                                  contributors="Music Auyeung, Miki Ajiki, Sirapop Tuntithanakij"
-                                 medias={FT} />
+                                 medias={FT} 
+                                 github="https://github.com/Phaitaras/TypingPractice"
+                    />
                     <ProjectCard name="Calories Manager" 
                                  technologies="Python(TkInter, Pickle)"
                                  description="This project has the objective of helping beginner users reach their health goals
@@ -88,7 +94,9 @@ const Projects = () => {
                                               the user's goal, whether it is to increase, decrease, or maintain body weight/BMI."
                                  date= "2022"
                                  contributors="Music Auyeung"
-                                 medias={CM} />
+                                 medias={CM} 
+                                 github="https://github.com/m0owo/CaloriesTracker"
+                    />
                 </div>
                 <VerticalDivider />
                 <hr className="border-black border-[0.3px]"/>
@@ -98,7 +106,7 @@ const Projects = () => {
     );
 };
 
-const ProjectCard = ({name, technologies, description, date, contributors, medias}) => {
+const ProjectCard = ({name, technologies, description, date, contributors, medias, github}) => {
     const [currentMedia, setCurrentMedia] = useState(0);
     const isVideo = (url) => {
         const vidExtensions = ['.MOV', '.mp4'];
@@ -110,9 +118,8 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                         overflow-scroll"
                         initial={{ x:-100, transition: {duration:0.5}}}
                         animate={{ x:0, transition: {duration:0.5} }}>
-            <div className="flex flex-col m-auto justify-center text-center break-words w-full
-                            backdrop-blur-sm">
-                <div className="m-auto aboslute text-center font-branch text-4xl font-bold
+            <div className="flex flex-col m-auto justify-center text-center break-words w-full">
+                <div className="m-auto text-center font-branch text-4xl font-bold
                                 sm:text-5xl sm:font-bold z-10 bg-opacity-100"
                 >
                     {name}
@@ -196,9 +203,26 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                     </div>
                     <div className="flex flex-row text-[14px] p-1 mx-9 sm:m-0">
                         {description}
+                    </div>
+                    <div className="flex flex-row text-[14px] p-1 mx-9 sm:m-0">
+                        <GithubLink link={github} />
                     </div> 
             </div>
         </motion.div>
+    );
+};
+
+const GithubLink = ({link}) => {
+    return (
+        <div className='mx-auto mt-2 mb-0 font-helvetica-neue text-xs
+                        bg-gray-50 text-[#1d1a4d] hover:bg-black hover:text-white
+                        rounded-full w-fit p-2
+                        font-semibold transition-all'>
+            <a href={link} target="_blank" className='flex flex-row gap-1'>
+                <span className='m-auto'><SlSocialGithub/></span>
+                <span className='m-auto'>To GitHub</span>
+            </a>
+        </div>
     );
 };
 
