@@ -215,7 +215,7 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
 const GithubLink = ({link}) => {
     return (
         <div className='mx-auto mt-2 mb-0 font-helvetica-neue text-xs
-                        bg-gray-50 text-[#1d1a4d] hover:bg-black hover:text-white
+                        hover:bg-gray-50 hover:text-[#1d1a4d] bg-black text-white
                         rounded-full w-fit p-2
                         font-semibold transition-all'>
             <a href={link} target="_blank" className='flex flex-row gap-1'>
