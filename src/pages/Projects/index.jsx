@@ -98,7 +98,7 @@ const Projects = () => {
                                  description="Pace, a project management application in active development, is designed to divide and conquer projects by structuring them 
                                               into tasks. Upcoming features encompass the incorporation of authentication, authorization, and the adept handling of concurrent tasks 
                                               across diverse projects along with collaboration between different users. The frontend is meticulously crafted using ReactJS and TailwindCSS, 
-                                              while the backend is orchestrated through an ExpressJS Restful API in NodeJS, seamlessly integrating with the PostgresSQL database."
+                                              while the backend is orchestrated through an ExpressJS Restful API in NodeJS, seamlessly integrating with the PostgreSQL database."
                                  date="2024"
                                  contributors="Music Auyeung"
                                  medias={P}
