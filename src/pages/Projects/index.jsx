@@ -17,12 +17,12 @@ const Projects = () => {
         }
     ];
 
-    // const TG = [
-    //     {
-    //         id: "TG1", 
-    //         path: "assets/Projects/TGgifs/Clip1.mp4"
-    //     }
-    // ];
+    const TG = [
+        {
+            id: "TG1", 
+            path: "assets/Projects/TGgifs/Clip1.MOV"
+        }
+    ];
     
     const FT = [
         {
@@ -120,7 +120,7 @@ const Projects = () => {
                                               for a warm and nostalgic game which simulates a tea bar inspired from familiar childhood web games."
                                  contributors="Music Auyeung, Miki Ajiki, Kawin Thimayom, Peerasawat Yapira, Sorawis Chongterdtoonskul"
                                  date="2023"
-                                 medias={ES}
+                                 medias={TG}
                                  github="https://github.com/ZenThaiDev/SuperMeowMeow"
                     />
                     <ProjectCard name="Fuzzy Typers" 
