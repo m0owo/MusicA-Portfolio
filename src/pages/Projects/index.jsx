@@ -10,20 +10,57 @@ import { Player } from 'video-react';
 
 
 const Projects = () => {
+    const P = [
+        {
+            id: "P1",
+            path: "assets/Projects/Pgifs/Clip1.mov"
+        }
+    ];
+
+    // const TG = [
+    //     {
+    //         id: "TG1", 
+    //         path: "assets/Projects/TGgifs/Clip1.mp4"
+    //     }
+    // ];
+    
     const FT = [
-        "assets/Projects/FTgifs/1.webp",
-        "assets/Projects/FTgifs/2.webp",
-        "assets/Projects/FTgifs/3.webp",
-        "assets/Projects/FTgifs/4.webp"
+        {
+            id: "FT1", 
+            path: "assets/Projects/FTgifs/1.webp"
+        },
+        {
+            id: "FT2", 
+            path: "assets/Projects/FTgifs/2.webp"
+        },
+        {
+            id: "FT3", 
+            path: "assets/Projects/FTgifs/3.webp"
+        },
+        {
+            id: "FT4", 
+            path: "assets/Projects/FTgifs/4.webp"
+        }
     ];
 
     const CM = [
-        "assets/Projects/CMgifs/Clip1.MOV"
-    ]
-      
+        {
+            id: "CM1", 
+            path: "assets/Projects/CMgifs/Clip1.MOV"
+        }
+    ];
+
     const ES = [
-        "assets/Projects/ESgifs/Clip1.mp4",
-        "assets/Projects/ESgifs/Clip2.mp4",
+        {
+            id: "ES1", 
+            path: "assets/Projects/ESgifs/Clip1.mp4"
+        }, 
+        {
+            id: "ES2" , 
+            path: "assets/Projects/ESgifs/Clip2.mp4"
+        }
+        // "assets/Projects/ESgifs/Clip1.mp4",
+        // "assets/Projects/ESgifs/Clip2.mp4",
         // "./assets/Projects/ESgifs/1.gif",
         // "./assets/Projects/ESgifs/2.gif",
         // "./assets/Projects/ESgifs/3.gif",
@@ -36,7 +73,7 @@ const Projects = () => {
     }, []);
 
     return (
-        <div className="w-screen">
+        <div className="w-full">
             <div className='bg-gradient-to-bl from-pink-100 via-indigo-100 to-violet-100 text-center'>
                 {/* <SideBar /> */}
                 
@@ -56,14 +93,17 @@ const Projects = () => {
                 <VerticalDivider />
                 
                 <div className="sm:mx-10">
-                    {/* <ProjectCard name="Super Meow Meow" 
-                                 technologies="Raylib"
-                                 description="Participated in a five-person project, Super Meow Meow, by leading the development of the Game UI and Art Design
-                                              for a warm and nostalgic game which simulates a tea bar inspired from familiar childhood web games."
-                                 contributors="Music Auyeung, Miki Ajiki, Kawin Thimayom, Peerasawat Yapira, Sorawis Chongterdtoonskul"
-                                 date="2023"
-                                 medias={FT}
-                    /> */}
+                    <ProjectCard name="Pace" 
+                                 technologies="ReactJS, TailwindCSS, NodeJS, ExpressJS, PostgreSQL"
+                                 description="Pace, a project management application in active development, is designed to divide and conquer projects by structuring them 
+                                              into tasks. Upcoming features encompass the incorporation of authentication, authorization, and the adept handling of concurrent tasks 
+                                              across diverse projects along with collaboration between different users. The frontend is meticulously crafted using ReactJS and TailwindCSS, 
+                                              while the backend is orchestrated through an ExpressJS Restful API in NodeJS, seamlessly integrating with the PostgresSQL database."
+                                 date="2024"
+                                 contributors="Music Auyeung"
+                                 medias={P}
+                                 github="https://github.com/m0owo/Pace"
+                    />
                     <ProjectCard name="EduSphere"
                                  technologies="HTML/CSS, JavaScript, Python(FastApi, ZODB)"
                                  description="Edusphere is a classroom assistance program which serves to improve the learning environment with features such as
@@ -72,8 +112,16 @@ const Projects = () => {
                                  date="2023"
                                  contributors="Music Auyeung, Miki Ajiki, Sirapop Tuntithanakij"
                                  medias={ES}
-                                 demo={"src/assets/Projects/ESgifs/Clip1.mov"}
                                  github="https://github.com/m0owo/SEdu"
+                    />
+                    <ProjectCard name="Super Meow Meow" 
+                                 technologies="Raylib"
+                                 description="Participated in a five-person project, Super Meow Meow, by leading the development of the Game UI and Art Design
+                                              for a warm and nostalgic game which simulates a tea bar inspired from familiar childhood web games."
+                                 contributors="Music Auyeung, Miki Ajiki, Kawin Thimayom, Peerasawat Yapira, Sorawis Chongterdtoonskul"
+                                 date="2023"
+                                 medias={ES}
+                                 github="https://github.com/ZenThaiDev/SuperMeowMeow"
                     />
                     <ProjectCard name="Fuzzy Typers" 
                                  technologies="C++, Raylib"
@@ -109,9 +157,9 @@ const Projects = () => {
 const ProjectCard = ({name, technologies, description, date, contributors, medias, github}) => {
     const [currentMedia, setCurrentMedia] = useState(0);
     const isVideo = (url) => {
-        const vidExtensions = ['.MOV', '.mp4'];
+        const vidExtensions = ['.MOV', '.mp4', '.mov'];
         return vidExtensions.some((extension) => url.endsWith(extension));
-      };
+    };
     return (
         <motion.div className="h-[600px] sm:h-[900px] my-20 mx-6 sm:m-20 bg-gradient-to-b from-amber-50 via-rose-100 to-violet-200 
                         rounded-3xl border-[hsl(241,73%,84%)] border-solid border-2 flex flex-col p-10 
@@ -134,27 +182,27 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                                                     ( currentMedia == 0 ) ? setCurrentMedia(medias.length - 1) : setCurrentMedia(currentMedia - 1)
                                             }} 
                         />
-                        {isVideo(medias[currentMedia]) ? (
+                        {console.log(medias[currentMedia].path)}
+                        {isVideo(medias[currentMedia].path) ? (
                             <motion.div
                                 initial={{ opacity:0, transition: {duration:0.5}}}
                                 animate={{ opacity:1, transition: {duration:0.5} }}
                             >
                                 <Player
-                                    className="sm:max-w-[400px] md:max-w-[480px] max-w-[250px] max-h-[250px] sm:max-h-[400px] m-auto border-[#1d1a4d] border-[1px]"
-                                    src={medias[currentMedia]}
+                                    className="sm:max-w-[400px] md:max-w-[600px] max-w-[400px] 
+                                               max-h-[250px] sm:max-h-[400px] m-auto border-[#1d1a4d] 
+                                               border-[1px] transition-all"
+                                    src={medias[currentMedia].path}
                                     key={name + currentMedia}
                                     autoplay={false}
                                     controls
                                     fluid={false}
                                 />
-                                {/* <video className="sm:max-w-[400px] md:max-w-[480px] max-w-[300px] max-h-[400px] m-auto border-[#1d1a4d] border-[1px]"
-                                       src={medias[currentMedia]}
-                                       key={currentMedia}></video> */}
                             </motion.div>
                         ) : (
                             <motion.img
                                 className="rounded-3xl m-auto border-gray-400 border-[1px]"
-                                src={Array.isArray(medias) && medias.length > 0 ? medias[currentMedia] : 'public/assets/Projects/ESgifs/Clip1.mov'}
+                                src={Array.isArray(medias) && medias.length > 0 ? medias[currentMedia].path : ""}
                                 alt={currentMedia}
                                 key={name + currentMedia}
                                 initial={{ x:10, opacity: 0, transition: {duration:0.5}}}
@@ -177,7 +225,7 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                         >
                             {medias.map((media, index) => (
                                 <div className={`m-auto h-[6px] w-[6px] rounded-full ${(index == currentMedia) ? "bg-pink-300" : "bg-pink-100"}`}
-                                     key={index}
+                                     key={media.id}
                                      onClick={() => {
                                         setCurrentMedia(index)
                                      }}
