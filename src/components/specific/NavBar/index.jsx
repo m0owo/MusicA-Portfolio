@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const NavBar = () => {
     return (
-        <motion.div className="z-10 backdrop-blur-sm sticky mx-10 scale-0 
+        <motion.div className="z-20 backdrop-blur-sm sticky mx-10 scale-0 
                                sm:scale-100 p-0 top-0 justify-center transition-all">
             <div className="flex flex-row justify-center pb-1">
                 <motion.div

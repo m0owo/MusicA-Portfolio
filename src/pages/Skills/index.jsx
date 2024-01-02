@@ -10,7 +10,7 @@ const Skills = () => {
     }, []);
 
     return (
-        <div className="w-screen">
+        <div className="w-full">
             <div className='bg-gradient-to-br from-indigo-200 via-fuchsia-100 to-violet-200 text-center top-0'>
                 {/* <SideBar /> */}
                 <NavBar />

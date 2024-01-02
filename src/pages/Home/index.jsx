@@ -11,7 +11,7 @@ const Home = () => {
     }, []);
     
     return (
-        <div className="w-screen">
+        <div className="w-full">
             {/* i changed the folder to the bg */}
             <div className='bg-gradient-to-b from-indigo-200 via-pink-100 to-violet-100
                             text-center'>
