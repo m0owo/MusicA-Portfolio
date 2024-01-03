@@ -189,8 +189,8 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                                 animate={{ opacity:1, transition: {duration:0.5} }}
                             >
                                 <Player
-                                    className="sm:max-w-[400px] md:max-w-[600px] max-w-[300px] 
-                                               max-h-[250px] sm:max-h-[400px] m-auto border-[#1d1a4d] 
+                                    className="sm:max-w-[400px] md:max-w-[600px] max-w-[200px] 
+                                               max-h-[150px] sm:max-h-[400px] m-auto border-[#1d1a4d] 
                                                border-[1px] transition-all"
                                     src={medias[currentMedia].path}
                                     key={name + currentMedia}
