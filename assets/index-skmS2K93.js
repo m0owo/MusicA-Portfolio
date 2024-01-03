@@ -113,8 +113,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                                 sm:text-5xl sm:font-bold z-10 bg-opacity-100`,children:e}),_.jsxs("div",{className:"group flex flex-col m-auto mt-16 relative z-9 w-full",children:[_.jsxs(u0,{children:[_.jsx(w2,{className:`absolute left-0 top-[40%] text-5xl
                                                         cursor-pointer invisible
                                                         group-hover:visible sm:text-6xl
-                                                        hover:text-indigo-800 z-10`,onClick:()=>{s==0?l(o.length-1):l(s-1)}}),console.log(o[s].path),c(o[s].path)?_.jsx(Xe.div,{initial:{opacity:0,transition:{duration:.5}},animate:{opacity:1,transition:{duration:.5}},children:_.jsx(c0.Player,{className:`sm:max-w-[400px] md:max-w-[600px] max-w-[300px] 
-                                               max-h-[250px] sm:max-h-[400px] m-auto border-[#1d1a4d] 
+                                                        hover:text-indigo-800 z-10`,onClick:()=>{s==0?l(o.length-1):l(s-1)}}),console.log(o[s].path),c(o[s].path)?_.jsx(Xe.div,{initial:{opacity:0,transition:{duration:.5}},animate:{opacity:1,transition:{duration:.5}},children:_.jsx(c0.Player,{className:`sm:max-w-[400px] md:max-w-[600px] max-w-[200px] 
+                                               max-h-[150px] sm:max-h-[400px] m-auto border-[#1d1a4d] 
                                                border-[1px] transition-all`,src:o[s].path,autoplay:!1,controls:!0,fluid:!1},e+s)}):_.jsx(Xe.img,{className:"rounded-3xl m-auto border-gray-400 border-[1px]",src:Array.isArray(o)&&o.length>0?o[s].path:"",alt:s,initial:{x:10,opacity:0,transition:{duration:.5}},animate:{x:0,opacity:1,transition:{duration:.5}}},e+s),_.jsx(T2,{className:`absolute right-0 top-[40%] text-5xl
                                                         cursor-pointer invisible
                                                         group-hover:visible sm:text-6xl
