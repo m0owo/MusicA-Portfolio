@@ -156,10 +156,12 @@ const Projects = () => {
 
 const ProjectCard = ({name, technologies, description, date, contributors, medias, github}) => {
     const [currentMedia, setCurrentMedia] = useState(0);
+
     const isVideo = (url) => {
         const vidExtensions = ['.MOV', '.mp4', '.mov'];
         return vidExtensions.some((extension) => url.endsWith(extension));
     };
+
     return (
         <motion.div className="w-[90%] h-[600px] sm:h-[900px] my-20 mx-auto bg-gradient-to-b from-amber-50 via-rose-100 to-violet-200 
                                rounded-3xl border-[hsl(241,73%,84%)] border-solid border-2 flex flex-col p-10 
@@ -182,33 +184,69 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                                                     ( currentMedia == 0 ) ? setCurrentMedia(medias.length - 1) : setCurrentMedia(currentMedia - 1)
                                             }} 
                         />
-                        {console.log(medias[currentMedia].path)}
-                        {isVideo(medias[currentMedia].path) ? (
-                            <motion.div
-                                initial={{ opacity:0, transition: {duration:0.5}}}
-                                animate={{ opacity:1, transition: {duration:0.5} }}
-                            >
-                                <Player
-                                    className="sm:max-w-[400px] md:max-w-[600px] max-w-[200px] 
-                                               max-h-[150px] sm:max-h-[400px] m-auto border-[#1d1a4d] 
-                                               border-[1px] transition-all"
-                                    src={medias[currentMedia].path}
-                                    key={name + currentMedia}
-                                    autoplay={false}
-                                    controls
-                                    fluid={false}
-                                />
-                            </motion.div>
-                        ) : (
-                            <motion.img
-                                className="rounded-3xl m-auto border-gray-400 border-[1px]"
-                                src={Array.isArray(medias) && medias.length > 0 ? medias[currentMedia].path : ""}
-                                alt={currentMedia}
-                                key={name + currentMedia}
-                                initial={{ x:10, opacity: 0, transition: {duration:0.5}}}
-                                animate={{ x:0, opacity: 1,  transition: {duration:0.5}}}
-                            />
-                        )}
+                            {
+                                medias.map((media, index) => {
+                                    if (index == currentMedia) {
+                                        return (
+                                            isVideo(media.path) ? (
+                                                <motion.div
+                                                    initial={{ opacity:0, transition: {duration:0.5}}}
+                                                    animate={{ opacity:1, transition: {duration:0.5} }}
+                                                >
+                                                    <Player
+                                                        className={`sm:max-w-[400px] md:max-w-[600px] max-w-[200px] 
+                                                                    max-h-[150px] sm:max-h-[400px] m-auto border-[#1d1a4d] 
+                                                                    border-[1px] transition-all`}
+                                                        src={media.path}
+                                                        key={name + media.id}
+                                                        autoplay={false}
+                                                        controls
+                                                        fluid={false}
+                                                    />
+                                                </motion.div>
+                                            ) : (
+                                                <motion.img
+                                                    className={`rounded-3xl m-auto border-gray-400 border-[1px]
+                                                                ${(index == currentMedia) ? "visible" : "invisible h-0"}`}
+                                                    src={media.path}
+                                                    alt={media.id}
+                                                    key={media.id}
+                                                    initial={{ x:10, opacity: 0, transition: {duration:0.5}}}
+                                                    animate={{ x:0, opacity: 1,  transition: {duration:0.5}}}
+                                                />
+                                            )
+                                        )
+                                    }
+                                })
+                            }
+                            {/* {
+                                isVideo(medias[currentMedia].path) ? (
+                                    <motion.div
+                                        initial={{ opacity:0, transition: {duration:0.5}}}
+                                        animate={{ opacity:1, transition: {duration:0.5} }}
+                                    >
+                                        <Player
+                                            className="sm:max-w-[400px] md:max-w-[600px] max-w-[200px] 
+                                                    max-h-[150px] sm:max-h-[400px] m-auto border-[#1d1a4d] 
+                                                    border-[1px] transition-all"
+                                            src={medias[currentMedia].path}
+                                            key={name + currentMedia}
+                                            autoplay={false}
+                                            controls
+                                            fluid={false}
+                                        />
+                                    </motion.div>
+                                ) : (
+                                    <motion.img
+                                        className="rounded-3xl m-auto border-gray-400 border-[1px]"
+                                        src={Array.isArray(medias) && medias.length > 0 ? medias[currentMedia].path : ""}
+                                        alt={currentMedia}
+                                        key={name + currentMedia}
+                                        initial={{ x:10, opacity: 0, transition: {duration:0.5}}}
+                                        animate={{ x:0, opacity: 1,  transition: {duration:0.5}}}
+                                    />
+                                )
+                            } */}
                         <PiCaretCircleRightFill className='absolute right-0 top-[40%] text-5xl
                                                         cursor-pointer invisible
                                                         group-hover:visible sm:text-6xl
