@@ -115,7 +115,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                                                         group-hover:visible sm:text-6xl
                                                         hover:text-indigo-800 z-10`,onClick:()=>{s==0?l(o.length-1):l(s-1)}}),o.map((d,p)=>{if(p==s)return c(d.path)?_.jsx(Xe.div,{initial:{opacity:0,transition:{duration:.5}},animate:{opacity:1,transition:{duration:.5}},children:_.jsx(c0.Player,{className:`sm:max-w-[400px] md:max-w-[600px] max-w-[200px] 
                                                                     max-h-[150px] sm:max-h-[400px] m-auto border-[#1d1a4d] 
-                                                                    border-[1px] transition-all`,src:d.path,autoplay:!1,controls:!0,fluid:!1},e+d.id)}):_.jsx(Xe.img,{className:`rounded-3xl m-auto border-gray-400 border-[1px]
+                                                                    border-[1px] transition-all ${p==s?"visible":"invisible h-0"}`,src:d.path,autoplay:!1,controls:!0,fluid:!1},e+d.id)}):_.jsx(Xe.img,{className:`rounded-3xl m-auto border-gray-400 border-[1px]
                                                                 ${p==s?"visible":"invisible h-0"}`,src:d.path,alt:d.id,initial:{x:10,opacity:0,transition:{duration:.5}},animate:{x:0,opacity:1,transition:{duration:.5}}},d.id)}),_.jsx(T2,{className:`absolute right-0 top-[40%] text-5xl
                                                         cursor-pointer invisible
                                                         group-hover:visible sm:text-6xl
