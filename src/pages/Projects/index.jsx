@@ -196,7 +196,7 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                                                     <Player
                                                         className={`sm:max-w-[400px] md:max-w-[600px] max-w-[200px] 
                                                                     max-h-[150px] sm:max-h-[400px] m-auto border-[#1d1a4d] 
-                                                                    border-[1px] transition-all`}
+                                                                    border-[1px] transition-all ${(index == currentMedia) ? "visible" : "invisible h-0"}`}
                                                         src={media.path}
                                                         key={name + media.id}
                                                         autoplay={false}
