@@ -18,14 +18,11 @@ const Home = () => {
                 {/* <SideBar /> */}
                 <NavBar />
                 <ToTopButton />
-                <div className="mt-20 sm:mt-10 flex flex-col md:flex-row justify-center mx-auto" >
-                    <motion.div className="m-auto md:mr-0 
-                                           transition-all">
-                        <WindowFrame />
-                    </motion.div>
-                    <motion.div className="mt-10 md:mt-20 sm:m-auto font-rosie-brown text-5xl 
-                                           sm:text-7xl text-center sm:text-start sm:mx-auto
-                                           transition-all md:text-8xl"
+                <div className="flex flex-col sm:flex-row justify-center m-auto 
+                                sm:mx-14 md:gap-20 transition-all" >
+                    <WindowFrame />
+                    <motion.div className="mt-20 font-rosie-brown text-5xl sm:text-7xl
+                                           sm:mt-40 sm:text-start sm:mx-auto sm:ml-0"
                                 initial={{opacity:0, transition: {duration: 0.1}}}
                                 animate={{opacity:1}}
                                 exit={{opacity:0, transition: {duration: 0.1}}}
