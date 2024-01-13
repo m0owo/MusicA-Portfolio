@@ -33,8 +33,18 @@ const Home = () => {
                 </div>
                 <VerticalDivider />
                 <div className="mt-9 mb-[50px] font-helvetica-neue font-semibold text-gray-700 text-xs sm:text-sm mx-[75px]">
-                    <p>2nd Year Student <span className="text-[#8187e2]">@KMITL</span></p>
-                    <p>Pursuing Bachelor's Degree in <span className="text-[#8187e2]">Software Engineering</span></p>
+                    <p>2nd Year Student <a href="https://www.kmitl.ac.th/" 
+                                           target="_blank"
+                                           className="text-[#8187e2] hover:text-[#4b5099]
+                                                      transition-all">@KMITL</a></p>
+                    <p>Pursuing Bachelor's Degree in <a href="https://www.se.kmitl.ac.th/" 
+                                                        target='_blank' 
+                                                        className="text-[#8187e2] hover:text-[#4b5099]
+                                                                   transition-all"
+                                                     >
+                                                        Software Engineering
+                                                     </a>
+                    </p>
                 </div>
                 <VerticalDivider />
                 <hr className="border-black border-[0.3px]"/>
