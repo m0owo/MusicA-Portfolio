@@ -93,7 +93,29 @@ const Projects = () => {
                 <VerticalDivider />
                 
                 <div className="sm:mx-10">
-                    <ProjectCard name="Pace" 
+                    {/* <ProjectCard name="MeeTung" 
+                                 technologies="Python(TkInter, Pickle)"
+                                 description="This project has the objective of helping beginner users reach their health goals
+                                              through the more friendly alternative to exercise, the art of eating. It takes
+                                              into account the user's current BMI and adjusts daily goals based on the recommended average and
+                                              the user's goal, whether it is to increase, decrease, or maintain body weight/BMI."
+                                 date= "2022"
+                                 contributors="Music Auyeung"
+                                 medias={CM} 
+                                 github="https://github.com/m0owo/CaloriesTracker"
+                    /> */}
+                    {/* <ProjectCard name="Curate" 
+                                 technologies="Python(TkInter, Pickle)"
+                                 description="This project has the objective of helping beginner users reach their health goals
+                                              through the more friendly alternative to exercise, the art of eating. It takes
+                                              into account the user's current BMI and adjusts daily goals based on the recommended average and
+                                              the user's goal, whether it is to increase, decrease, or maintain body weight/BMI."
+                                 date= "2022"
+                                 contributors="Music Auyeung"
+                                 medias={CM} 
+                                 github="https://github.com/m0owo/CaloriesTracker"
+                    /> */}
+                    {/* <ProjectCard name="Pace" 
                                  technologies="ReactJS, TailwindCSS, NodeJS, ExpressJS, PostgreSQL"
                                  description="Pace, a project management application in active development, is designed to divide and conquer projects by structuring them 
                                               into tasks. Upcoming features encompass the incorporation of authentication, authorization, and the adept handling of concurrent tasks 
@@ -103,7 +125,7 @@ const Projects = () => {
                                  contributors="Music Auyeung"
                                  medias={P}
                                  github="https://github.com/m0owo/Pace"
-                    />
+                    /> */}
                     <ProjectCard name="EduSphere"
                                  technologies="HTML/CSS, JavaScript, Python(FastApi, ZODB)"
                                  description="Edusphere is a classroom assistance program which serves to improve the learning environment with features such as
@@ -193,7 +215,7 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                                                     initial={{ opacity:0, transition: {duration:0.5}}}
                                                     animate={{ opacity:1, transition: {duration:0.5} }}
                                                 >
-                                                    <Player
+                                                    {/* <Player
                                                         className={`sm:max-w-[400px] md:max-w-[600px] max-w-[200px] 
                                                                     max-h-[150px] sm:max-h-[400px] m-auto border-[#1d1a4d] 
                                                                     border-[1px] transition-all ${(index == currentMedia) ? "visible" : "invisible h-0"}`}
@@ -202,7 +224,7 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                                                         autoplay={false}
                                                         controls
                                                         fluid={false}
-                                                    />
+                                                    /> */}
                                                 </motion.div>
                                             ) : (
                                                 <motion.img

@@ -6,6 +6,25 @@ import { motion } from "framer-motion";
 import ToTopButton from '../../components/specific/ToTopButton';
 
 const Home = () => {
+    const startDate = new Date(2022, 6, 1);
+    const curDate = new Date();
+    const schoolYear = Math.ceil((curDate - startDate) / (1000 * 60 * 60 * 24 * 365));
+    const [year, setYear] = useState(schoolYear);
+
+    useEffect(() => {
+        if (schoolYear === 1) {
+        setYear("1st");
+        } else if (schoolYear === 2) {
+        setYear("2nd");
+        } else if (schoolYear === 3) {
+        setYear("3rd");
+        } else if (schoolYear === 4) {
+        setYear("4th");
+        } else if (schoolYear > 4) {
+        setYear("");
+        }
+    }, [schoolYear]);
+
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }, []);
@@ -33,7 +52,7 @@ const Home = () => {
                 </div>
                 <VerticalDivider />
                 <div className="mt-9 mb-[50px] font-helvetica-neue font-semibold text-gray-700 text-xs sm:text-sm mx-[75px]">
-                    <p>3rd Year Student <a href="https://www.kmitl.ac.th/" 
+                    <p>{year} Year Student <a href="https://www.kmitl.ac.th/" 
                                            target="_blank"
                                            className="text-[#8187e2] hover:text-[#4b5099]
                                                       transition-all">@KMITL</a></p>
