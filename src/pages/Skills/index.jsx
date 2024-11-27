@@ -34,14 +34,19 @@ const Skills = () => {
                     <SkillCard text="HTML" pic="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-html-5-512.png"/>
                     <SkillCard text="JavaScript" pic="https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png"/>
                     <SkillCard text="CSS" pic="https://diziglobalsolution.com/wp-content/uploads/2023/04/logo-css-3-1536.png"/>
-                    <SkillCard text="ReactJS" pic="https://cdn1.iconfinder.com/data/icons/programing-development-8/24/react_logo-512.png" />
+                    <SkillCard text="React" pic="https://cdn1.iconfinder.com/data/icons/programing-development-8/24/react_logo-512.png" />
                     <SkillCard text="TailwindCSS" pic="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png"/>
+                    <SkillCard text="VueJs" pic="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vue.png"/>
+                    <SkillCard text="TypeScript" pic="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png"/>
                 </div>
                 <div className="my-10 text-center font-branch font-bold text-3xl sm:text-4xl">Backend Development</div>
                 <div className="justify-items-center justify-center m-auto grid grid-cols-2 sm:grid-cols-4 gap-y-5 max-w-6xl">
-                    <SkillCard text="NodeJS" pic="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1180px-Node.js_logo.svg.png"/>
-                    <SkillCard text="ExpressJS" pic="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png"/>
+                    <SkillCard text="NodeJs" pic="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1180px-Node.js_logo.svg.png"/>
+                    <SkillCard text="ExpressJs" pic="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png"/>
                     <SkillCard text="PostgreSQL" pic="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png"/>
+                    <SkillCard text="NestJs" pic="https://static-00.iconduck.com/assets.00/nestjs-icon-2048x2040-3rrvcej8.png"/>
+                    <SkillCard text="MySQL" pic="https://upload.wikimedia.org/wikipedia/labs/8/8e/Mysql_logo.png"/>
+                    <SkillCard text="MongoDB" pic="https://iconape.com/wp-content/png_logo_vector/mongodb.png"/>
                 </div>
                 <VerticalDivider />
                 <hr className="border-black border-[0.3px]"/>

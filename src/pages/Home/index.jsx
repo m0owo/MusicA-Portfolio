@@ -33,7 +33,7 @@ const Home = () => {
                 </div>
                 <VerticalDivider />
                 <div className="mt-9 mb-[50px] font-helvetica-neue font-semibold text-gray-700 text-xs sm:text-sm mx-[75px]">
-                    <p>2nd Year Student <a href="https://www.kmitl.ac.th/" 
+                    <p>3rd Year Student <a href="https://www.kmitl.ac.th/" 
                                            target="_blank"
                                            className="text-[#8187e2] hover:text-[#4b5099]
                                                       transition-all">@KMITL</a></p>
