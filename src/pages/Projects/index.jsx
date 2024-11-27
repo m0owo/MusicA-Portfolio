@@ -10,13 +10,15 @@ import { Player } from 'video-react';
 
 
 const Projects = () => {
-    const P = [
-        {
-            id: "P1",
-            path: "assets/Projects/Pgifs/Clip1.mov"
-        }
-    ];
+    // pace
+    // const P = [
+    //     {
+    //         id: "P1",
+    //         path: "assets/Projects/Pgifs/Clip1.mov"
+    //     }
+    // ];
 
+    // teagame/supermeowmeow
     const TG = [
         {
             id: "TG1", 
@@ -24,6 +26,7 @@ const Projects = () => {
         }
     ];
     
+    // fuzzytypers
     const FT = [
         {
             id: "FT1", 
@@ -43,30 +46,61 @@ const Projects = () => {
         }
     ];
 
+    // calories manager
     const CM = [
         {
             id: "CM1", 
-            path: "assets/Projects/CMgifs/Clip1.MOV"
-        }
+            path: "assets/Projects/CMgifs/1.webp"
+        },
+        {
+            id: "CM2", 
+            path: "assets/Projects/CMgifs/2.webp"
+        },
+        {
+            id: "CM3", 
+            path: "assets/Projects/CMgifs/3.webp"
+        },
     ];
 
+    // edusphere
     const ES = [
         {
             id: "ES1", 
-            path: "assets/Projects/ESgifs/Clip1.mp4"
+            path: "assets/Projects/ESgifs/1.gif"
         }, 
         {
             id: "ES2" , 
-            path: "assets/Projects/ESgifs/Clip2.mp4"
+            path: "assets/Projects/ESgifs/2.gif"
+        },
+        {
+            id: "ES3", 
+            path: "assets/Projects/ESgifs/3.gif"
+        }, 
+        {
+            id: "ES4" , 
+            path: "assets/Projects/ESgifs/4.gif"
         }
-        // "assets/Projects/ESgifs/Clip1.mp4",
-        // "assets/Projects/ESgifs/Clip2.mp4",
-        // "./assets/Projects/ESgifs/1.gif",
-        // "./assets/Projects/ESgifs/2.gif",
-        // "./assets/Projects/ESgifs/3.gif",
-        // "./assets/Projects/ESgifs/4.gif",
     ];
-      
+
+    // meetung
+    const MT = [
+        {
+            id: "MT1", 
+            path: "assets/Projects/MTgifs/1.webp"
+        },
+        {
+            id: "MT2", 
+            path: "assets/Projects/MTgifs/2.webp"
+        },
+        {
+            id: "MT3", 
+            path: "assets/Projects/MTgifs/3.webp"
+        },
+        {
+            id: "MT4", 
+            path: "assets/Projects/MTgifs/4.webp"
+        }
+    ];
     
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -93,27 +127,25 @@ const Projects = () => {
                 <VerticalDivider />
                 
                 <div className="sm:mx-10">
-                    {/* <ProjectCard name="MeeTung" 
-                                 technologies="Python(TkInter, Pickle)"
-                                 description="This project has the objective of helping beginner users reach their health goals
-                                              through the more friendly alternative to exercise, the art of eating. It takes
-                                              into account the user's current BMI and adjusts daily goals based on the recommended average and
-                                              the user's goal, whether it is to increase, decrease, or maintain body weight/BMI."
-                                 date= "2022"
-                                 contributors="Music Auyeung"
-                                 medias={CM} 
-                                 github="https://github.com/m0owo/CaloriesTracker"
-                    /> */}
+                    <ProjectCard name="MeeTung" 
+                                 technologies="Next.js, Prisma, TypeScript, Tailwind CSS"
+                                 description="This project has the objective of helping users manage their budget by tracking
+                                              their daily spendings and expenses."
+                                 date= "2024"
+                                 contributors="Music Auyeung, Kritanat Chorpaga, Peerasawat Yapira, Tripong Khemasurijunyo"
+                                 medias={MT} 
+                                 github="https://github.com/ZenThaiDev/MeeTung"
+                    />
                     {/* <ProjectCard name="Curate" 
                                  technologies="Python(TkInter, Pickle)"
                                  description="This project has the objective of helping beginner users reach their health goals
                                               through the more friendly alternative to exercise, the art of eating. It takes
                                               into account the user's current BMI and adjusts daily goals based on the recommended average and
                                               the user's goal, whether it is to increase, decrease, or maintain body weight/BMI."
-                                 date= "2022"
-                                 contributors="Music Auyeung"
-                                 medias={CM} 
-                                 github="https://github.com/m0owo/CaloriesTracker"
+                                 date= "2024"
+                                 contributors="Music Auyeung, Miki Ajiki, Sirapop Tuntithanakij"
+                                 medias={} 
+                                 github="https://github.com/m0owo/Curate"
                     /> */}
                     {/* <ProjectCard name="Pace" 
                                  technologies="ReactJS, TailwindCSS, NodeJS, ExpressJS, PostgreSQL"
@@ -215,7 +247,7 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                                                     initial={{ opacity:0, transition: {duration:0.5}}}
                                                     animate={{ opacity:1, transition: {duration:0.5} }}
                                                 >
-                                                    {/* <Player
+                                                    <Player
                                                         className={`sm:max-w-[400px] md:max-w-[600px] max-w-[200px] 
                                                                     max-h-[150px] sm:max-h-[400px] m-auto border-[#1d1a4d] 
                                                                     border-[1px] transition-all ${(index == currentMedia) ? "visible" : "invisible h-0"}`}
@@ -224,7 +256,7 @@ const ProjectCard = ({name, technologies, description, date, contributors, media
                                                         autoplay={false}
                                                         controls
                                                         fluid={false}
-                                                    /> */}
+                                                    />
                                                 </motion.div>
                                             ) : (
                                                 <motion.img
